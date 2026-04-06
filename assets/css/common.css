@@ -1,235 +1,92 @@
-@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #F5F278;
+    color: #1E1E1E;
+    line-height: 1.5;
+}
 
-/* 공통 레이아웃 */
-.inner{
-    width: 88%;
+.container {
     max-width: 1320px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-section{
-    padding: 80px 0;
-}
-
-/* 타이포 */
-.h1{
-    font-family: "Tmoney RoundWind", sans-serif;
-    font-size: 40px;
-    font-weight: 800;
-    line-height: 1.4;
-}
-
-.h2{
-    font-family: "Tmoney RoundWind", sans-serif;
+.section-title {
+    font-family: 'TMoneyDungunbaram', sans-serif;
     font-size: 32px;
     font-weight: 800;
-    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1E1E1E;
 }
 
-.h3{
-    font-family: "Tmoney RoundWind", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.4;
+.section-sub {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 48px;
+    color: #555;
 }
 
-.b1{
-    font-family: "Pretendard", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-.b2{
-    font-family: "Pretendard", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-.b3{
-    font-family: "Pretendard", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* 버튼 */
-.btn{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    min-height: 44px;
-    padding: 0 24px;
+.badge-pill {
+    display: inline-block;
+    background-color: #302F32;
+    color: #F9F4EE;
+    padding: 6px 14px;
     border-radius: 999px;
-
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1;
-    transition: 0.2s;
+    font-size: 12px;
+    font-weight: 500;
 }
 
-
-.btn-primary{
-    height: 56px;
-    background: #F5F278;
-    color: #1E1E1E;
-}
-
-.btn-secondary{
-    height: 56px;
-    background: #F9F4EE;
-    color: #1E1E1E;
-    border: 1px solid #1E1E1E;
-}
-
-.btn-ghost{
-    height: 48px;
-    background: transparent;
-    color: #1E1E1E;
-}
-
-.btn-disabled{
-    height: 56px;
-    background: #D8D8D8;
-    color: #8A8A8A;
-    cursor: not-allowed;
-}
-
-.btn:active{
-    transform: scale(0.98);
-}
-
-.btn:focus{
-    outline: 2px solid #1E1E1E;
-    outline-offset: 2px;
-}
-
-
-/* 카드 */
-.card{
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-}
-
-.feature-card{
-    background: #F5F278;
-}
-
-/* 배지 */
-.badge{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    min-height: 34px;
-    padding: 0 14px;
-    border-radius: 999px;
-
+.stars {
+    color: #FFB800;
+    letter-spacing: 2px;
     font-size: 14px;
+}
+
+.rating-num {
     font-weight: 600;
-    line-height: 1;
+    margin-left: 6px;
 }
 
-.badge-primary{
-    background: #F5F278;
-    color: #1E1E1E;
+/* 폰트 */
+@font-face {
+    font-family: 'TMoneyDungunbaram';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: 400;
 }
-
-.badge-accent{
-    background: #FF99B0;
-    color: #1E1E1E;
+@font-face {
+    font-family: 'TMoneyDungunbaram';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: 800;
 }
-
-/* 마진 */
-.mt8{ margin-top: 8px; }
-.mt12{ margin-top: 12px; }
-.mt16{ margin-top: 16px; }
-.mt20{ margin-top: 20px; }
-.mt24{ margin-top: 24px; }
-.mt34{ margin-top: 34px; }
-.mt40{ margin-top: 40px; }
-.mt48{ margin-top: 48px; }
-
-.mb8{ margin-bottom: 8px; }
-.mb12{ margin-bottom: 12px; }
-.mb16{ margin-bottom: 16px; }
-.mb20{ margin-bottom: 20px; }
-.mb24{ margin-bottom: 24px; }
-.mb40{ margin-bottom: 40px; }
-.mb48{ margin-bottom: 48px; }
-
-
-/* 모바일 */
-@media (max-width: 767px){
-
-    body{
-        padding-top: 34px;
-    }
-
-    .inner{
-        width: 92%;
-        max-width: none;
-    }
-
-    section{
-        padding: 40px 0;
-    }
-
-    .h1{
-        font-size: 28px;
-    }
-
-    .h2{
-        font-size: 24px;
-    }
-
-    .h3{
-        font-size: 20px;
-    }
-
-    .b1{
-        font-size: 18px;
-    }
-
-    .b2{
-        font-size: 17px;
-    }
-
-    .b3{
-        font-size: 15px;
-    }
-
-    .btn{
-        padding: 0 20px;
-    }
-
-    .input{
-        height: 52px;
-        padding: 0 16px;
-        font-size: 16px;
-    }
-
-    .textarea{
-        min-height: 120px;
-        padding: 16px;
-        font-size: 16px;
-        border-radius: 20px;
-    }
-
-    .card{
-        padding: 16px;
-        border-radius: 20px;
-    }
-
-    .badge{
-        min-height: 30px;
-        padding: 0 12px;
-        font-size: 13px;
-    }
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
 }
