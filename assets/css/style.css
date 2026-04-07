@@ -1,7 +1,4 @@
-/* =============================================
-   DangGO — style.css
-   섹션별 레이아웃 & 컴포넌트 스타일
-   ============================================= */
+@import url(common.css);
 
 /* ─── HEADER ─────────────────────────────────── */
 .header {
@@ -10,10 +7,16 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: var(--color-primary); 
+    transition: background-color var(--tr-slow), box-shadow var(--tr-slow);
+}
+
+/* 스크롤 후 어두운 헤더 */
+.header--scrolled {
+    background-color: rgba(30, 30, 30, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(249, 244, 238, 0.08);
+    box-shadow: 0 2px 16px rgba(0,0,0,.25);
 }
 
 .header__inner {
@@ -34,38 +37,58 @@
     gap: var(--sp-sm);
 }
 
+/* nav 링크 — 기본(primary 배경): 검정 */
 .nav {
     display: flex;
     align-items: center;
     gap: var(--sp-xs);
     list-style: none;
 }
-
 .nav a {
     font-family: var(--font-body);
     font-size: var(--fs-b2);
     font-weight: var(--fw-medium);
-    color: var(--color-text);
+    color: var(--color-black);
     opacity: 0.75;
-    transition: opacity var(--tr-fast);
+    transition: opacity var(--tr-fast), color var(--tr-fast);
 }
 .nav a:hover {
     opacity: 1;
-    color: var(--color-primary);
 }
 
-/* 모바일 nav 숨김 → common.css에서 처리 */
+/* 스크롤 후: nav 링크 흰색으로 */
+.header--scrolled .nav a {
+    color: var(--color-text);
+}
+.header--scrolled .nav a:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
 
+/* 헤더 버튼 — 기본: 검정 배경 */
+.header .btn-app {
+    background-color: var(--color-black);
+    color: var(--color-text);
+    border-color: transparent;
+}
+/* 스크롤 후: primary 배경으로 반전 */
+.header--scrolled .btn-app {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
+
+/* 모바일: nav + btn-app 숨김 → common.css .nav { display:none } 으로 처리 */
 @media (max-width: 767px) {
     .header__right .btn-app {
         display: none;
     }
 }
 
-/* ─── KV 섹션 ─────────────────────────────────── */
+
+/* ─── KV 섹션 — bg: primary(yellow) ──────────── */
 .kv {
     background-color: var(--color-primary);
-    padding-top: calc(64px + 60px); /* 헤더 높이 + 여백 */
+    padding-top: calc(64px + 60px);
     padding-bottom: 0;
     overflow: hidden;
     min-height: 100vh;
@@ -99,11 +122,10 @@
     font-size: var(--fs-b1);
     font-weight: var(--fw-medium);
     color: var(--color-black);
-    opacity: 0.7;
+    opacity: 0.65;
     margin-top: 12px;
 }
 
-/* 앱 다운로드 버튼 그룹 */
 .kv__btns {
     display: flex;
     gap: 12px;
@@ -122,6 +144,8 @@
     font-family: var(--font-body);
     font-size: var(--fs-b2);
     font-weight: var(--fw-bold);
+    background-color: var(--color-black);
+    color: var(--color-text);
     transition: transform var(--tr-base), box-shadow var(--tr-base);
     white-space: nowrap;
 }
@@ -130,20 +154,12 @@
     height: 18px;
     display: inline-block;
 }
-.btn-store--google {
-    background-color: var(--color-black);
-    color: var(--color-text);
-}
-.btn-store--apple {
-    background-color: var(--color-black);
-    color: var(--color-text);
-}
 .btn-store:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-/* 택시 + floating badges wrap */
+/* 택시 + floating badges */
 .kv__taxi-wrap {
     position: relative;
     width: 100%;
@@ -155,72 +171,73 @@
     width: 100%;
     display: block;
     margin-inline: auto;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.18));
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
+    /* 모바일 height 제한 */
+    max-height: 60vw;
+    object-fit: contain;
 }
 
-/* ── floating badge 개별 위치 & 애니메이션 ── */
-/* floating-1: 좌상단, 노란 stroke, 살짝 왼쪽 기울기 */
+/* floating badge 개별 위치 & 애니메이션 */
 .floating-1 {
     --_rotate: -6deg;
-    top: 5%;
+    top: 8%;
     left: -2%;
     animation: floatY 3.2s ease-in-out infinite;
     animation-delay: 0s;
 }
-
-/* floating-2: 우상단, 핑크 stroke, 오른쪽 기울기 */
 .floating-2 {
     --_rotate: 5deg;
-    top: 8%;
+    top: 10%;
     right: 0%;
     animation: floatY-rev 2.8s ease-in-out infinite;
     animation-delay: 0.4s;
 }
-
-/* floating-3: 좌하단, 흰 stroke, sm size */
 .floating-3 {
     --_rotate: -4deg;
-    bottom: 22%;
+    bottom: 24%;
     left: 0%;
     animation: floatY 3.6s ease-in-out infinite;
     animation-delay: 0.8s;
 }
-
-/* floating-4: 우하단, 노란 stroke, sm size */
 .floating-4 {
     --_rotate: 4deg;
-    bottom: 18%;
+    bottom: 20%;
     right: 2%;
     animation: floatY-rev 3s ease-in-out infinite;
     animation-delay: 1.2s;
 }
 
+/* KV 태블릿 */
+@media (max-width: 1024px) {
+    .kv__taxi-wrap { max-width: 560px; }
+}
+
 /* KV 모바일 */
 @media (max-width: 767px) {
     .kv {
-        padding-top: calc(64px + 40px);
+        padding-top: calc(64px + 32px);
         min-height: auto;
-        padding-bottom: 0;
+    }
+    .kv__inner {
+        padding-inline: var(--sp-xs);
     }
     .kv__taxi-wrap {
         max-width: 100%;
+        margin-top: var(--sp-xs);
     }
-    .floating-1 { left: -4%;  top: 4%; }
-    .floating-2 { right: -2%; top: 6%; }
-    .floating-3 { left: -4%;  bottom: 24%; }
-    .floating-4 { right: -2%; bottom: 20%; }
+    .kv__taxi {
+        max-height: 56vw;
+    }
+    .floating-1 { left: -4%;  top: 6%; }
+    .floating-2 { right: -2%; top: 8%; }
+    .floating-3 { left: -4%;  bottom: 26%; }
+    .floating-4 { right: -2%; bottom: 22%; }
 }
 
-/* KV 태블릿 */
-@media (max-width: 1024px) {
-    .kv__taxi-wrap {
-        max-width: 580px;
-    }
-}
 
-/* ─── ABOUT 섹션 ──────────────────────────────── */
+/* ─── ABOUT 섹션 — bg: dark ───────────────────── */
 .about {
-    background-color: var(--color-bg);
+    background-color: var(--color-bg);    /* dark */
     padding-block: var(--sp-section);
 }
 
@@ -234,20 +251,22 @@
     align-items: center;
     text-align: center;
     gap: var(--sp-title-gap);
-    padding-top: var(--sp-sm);
-    padding-bottom: var(--sp-sm);
 }
 
 @media (max-width: 767px) {
-    .about__inner {
-        padding-inline: var(--sp-xs);
-    }
+    .about__inner { padding-inline: var(--sp-xs); }
 }
 
-/* ─── HOW TO USE 섹션 ─────────────────────────── */
+
+/* ─── HOW TO USE 섹션 — bg: white ────────────── */
 .howto {
-    background-color: var(--color-bg);
+    background-color: var(--color-white);  /* white */
 }
+
+/* howto 안의 텍스트는 검정 */
+.howto .section-label { color: var(--color-black); opacity: 0.45; }
+.howto .section-title { color: var(--color-black); }
+.howto .section-sub   { color: var(--color-black); }
 
 .howto__layout {
     display: grid;
@@ -261,9 +280,12 @@
     justify-content: center;
 }
 .howto__mockup img {
-    max-width: 340px;
+    max-width: 320px;
     width: 100%;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.4));
+    /* 모바일 height 제한 */
+    max-height: 480px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.18));
 }
 
 .howto__content {
@@ -278,14 +300,13 @@
     gap: 8px;
     flex-wrap: wrap;
 }
-
 .howto__tab {
     font-family: var(--font-body);
     font-size: var(--fs-b2);
     font-weight: var(--fw-medium);
-    color: var(--color-text);
+    color: var(--color-black);
     background: transparent;
-    border: 1.5px solid rgba(249,244,238,.25);
+    border: 1.5px solid rgba(30,30,30,.2);
     border-radius: var(--r-full);
     padding: 7px 16px;
     cursor: pointer;
@@ -293,31 +314,29 @@
 }
 .howto__tab--active,
 .howto__tab:hover {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-black);
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
 }
 
-/* 스텝 리스트 */
+/* 스텝 */
 .howto__steps {
     display: flex;
     flex-direction: column;
     gap: var(--sp-xs);
     list-style: none;
 }
-
 .howto__step {
     display: flex;
     gap: 16px;
     align-items: flex-start;
 }
-
 .howto__step-num {
     min-width: 28px;
     height: 28px;
     border-radius: 50%;
-    background-color: var(--color-primary);
-    color: var(--color-black);
+    background-color: var(--color-black);
+    color: var(--color-primary);
     font-family: var(--font-headline);
     font-size: var(--fs-b2);
     font-weight: var(--fw-extrabold);
@@ -327,47 +346,41 @@
     flex-shrink: 0;
     margin-top: 2px;
 }
-
 .howto__step-title {
     font-family: var(--font-headline);
     font-size: var(--fs-h4);
     font-weight: var(--fw-extrabold);
-    color: var(--color-text);
+    color: var(--color-black);
     margin-bottom: var(--sp-xs);
 }
-
 .howto__step-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
     list-style: none;
 }
-
 .howto__step-list li {
     display: flex;
     gap: 12px;
     align-items: flex-start;
 }
-
 .step-icon {
     font-size: 20px;
     flex-shrink: 0;
     margin-top: 2px;
 }
-
 .howto__step-list strong {
     display: block;
     font-family: var(--font-body);
     font-size: var(--fs-b1);
     font-weight: var(--fw-bold);
-    color: var(--color-text);
+    color: var(--color-black);
     margin-bottom: 4px;
 }
-
 .howto__step-list p {
     font-size: var(--fs-b2);
-    color: var(--color-text);
-    opacity: 0.65;
+    color: var(--color-black);
+    opacity: 0.6;
     line-height: 1.55;
 }
 
@@ -377,22 +390,17 @@
         grid-template-columns: 1fr;
         gap: var(--sp-sm);
     }
-    .howto__mockup {
-        order: -1;
-    }
-    .howto__mockup img {
-        max-width: 260px;
-    }
+    .howto__mockup { order: -1; }
+    .howto__mockup img { max-width: 240px; max-height: 380px; }
 }
 @media (max-width: 767px) {
-    .howto__mockup img {
-        max-width: 220px;
-    }
+    .howto__mockup img { max-width: 200px; max-height: 300px; }
 }
 
-/* ─── FEATURES 섹션 ───────────────────────────── */
+
+/* ─── FEATURES 섹션 — bg: dark ───────────────── */
 .features {
-    background-color: var(--color-bg);
+    background-color: var(--color-bg);    /* dark */
 }
 
 .features__pin {
@@ -402,11 +410,10 @@
 }
 .features__pin img {
     width: 200px;
+    /* 모바일 height 제한 */
+    max-height: 200px;
+    object-fit: contain;
     filter: drop-shadow(0 16px 32px rgba(0,0,0,.35));
-}
-
-.features__cards {
-    margin-top: 0;
 }
 
 .features__card {
@@ -415,13 +422,11 @@
     gap: 12px;
     padding: var(--sp-xs);
 }
-
 .features__card-img {
     width: 56px;
     height: 56px;
     object-fit: contain;
 }
-
 .features__card-title {
     font-family: var(--font-headline);
     font-size: var(--fs-h4);
@@ -429,7 +434,6 @@
     color: var(--color-black);
     line-height: 1.25;
 }
-
 .features__card-desc {
     font-family: var(--font-body);
     font-size: var(--fs-b2);
@@ -440,18 +444,20 @@
 }
 
 @media (max-width: 767px) {
-    .features__pin img {
-        width: 140px;
-    }
-    .features__card-title {
-        font-size: var(--fs-b1);
-    }
+    .features__pin img { width: 120px; max-height: 120px; }
+    .features__card-title { font-size: var(--fs-b1); }
 }
 
-/* ─── DRIVER 섹션 ─────────────────────────────── */
+
+/* ─── DRIVER 섹션 — bg: white ────────────────── */
 .driver {
-    background-color: var(--color-bg);
+    background-color: var(--color-white);  /* white */
 }
+
+/* driver 텍스트 검정 */
+.driver .section-label { color: var(--color-black); opacity: 0.45; }
+.driver .section-title { color: var(--color-black); }
+.driver .section-sub   { color: var(--color-black); }
 
 .driver__layout {
     display: grid;
@@ -461,7 +467,6 @@
     margin-top: var(--sp-sm);
 }
 
-/* 드라이버 슬라이드 */
 .driver__slides {
     border-radius: var(--r-md);
     overflow: hidden;
@@ -469,17 +474,18 @@
 .driver__slide-item img {
     width: 100%;
     aspect-ratio: 3 / 4;
+    /* 모바일 height 제한 */
+    max-height: 480px;
     object-fit: cover;
     border-radius: var(--r-md);
     display: block;
 }
 
-/* 체크리스트 */
 .driver__content-title {
     font-family: var(--font-headline);
     font-size: var(--fs-h3);
     font-weight: var(--fw-extrabold);
-    color: var(--color-text);
+    color: var(--color-black);
     line-height: 1.35;
     margin-bottom: var(--sp-xs);
 }
@@ -490,32 +496,28 @@
     gap: var(--sp-xs);
     list-style: none;
 }
-
 .driver__checklist li {
     display: flex;
     gap: 14px;
     align-items: flex-start;
 }
-
 .check-icon {
     font-size: 18px;
     flex-shrink: 0;
     margin-top: 2px;
 }
-
 .driver__checklist strong {
     display: block;
     font-family: var(--font-body);
     font-size: var(--fs-b1);
     font-weight: var(--fw-bold);
-    color: var(--color-text);
+    color: var(--color-black);
     margin-bottom: 4px;
 }
-
 .driver__checklist p {
     font-size: var(--fs-b2);
-    color: var(--color-text);
-    opacity: 0.65;
+    color: var(--color-black);
+    opacity: 0.6;
     line-height: 1.55;
 }
 
@@ -525,27 +527,43 @@
         grid-template-columns: 1fr;
         gap: var(--sp-sm);
     }
+    .driver__slide-item img { max-height: 360px; }
 }
 @media (max-width: 767px) {
-    .driver__content-title {
-        font-size: var(--fs-h4);
-    }
+    .driver__content-title { font-size: var(--fs-h4); }
+    .driver__slide-item img { max-height: 280px; }
 }
 
-/* ─── REVIEW 섹션 ─────────────────────────────── */
+
+/* ─── REVIEW 섹션 — bg: dark ─────────────────── */
 .review {
-    background-color: var(--color-bg);
+    background-color: var(--color-bg);    /* dark */
 }
 
-/* stats — common.css에서 bg/선 없이 정의, 여기서 간격만 추가 */
 .review-stats {
     margin-top: var(--sp-sm);
     margin-bottom: var(--sp-sm);
 }
 
-/* ─── CTA 섹션 ────────────────────────────────── */
+/* 리뷰 카드 이미지 height 제한 */
+.review-card__img {
+    max-height: 220px;
+}
+
+@media (max-width: 767px) {
+    .review-card__img {
+        max-height: 160px;
+    }
+    .review-card__body {
+        padding: 12px;
+        gap: 4px;
+    }
+}
+
+
+/* ─── CTA 섹션 — bg: white ───────────────────── */
 .cta {
-    background-color: var(--color-primary);
+    background-color: var(--color-white);  /* white */
     padding-block: var(--sp-section);
 }
 
@@ -560,9 +578,14 @@
     font-family: var(--font-headline);
     font-size: var(--fs-h2);
     font-weight: var(--fw-extrabold);
-    color: var(--color-black);
+    color: var(--color-black);             /* white bg → 검정 텍스트 */
     line-height: 1.25;
     margin-bottom: var(--sp-xs);
+}
+
+/* "10만" 강조 — point color */
+.cta__title .color-point {
+    color: var(--color-point);
 }
 
 .cta__sub {
@@ -570,7 +593,7 @@
     font-size: var(--fs-b1);
     font-weight: var(--fw-regular);
     color: var(--color-black);
-    opacity: 0.7;
+    opacity: 0.6;
     margin-bottom: var(--sp-xs);
 }
 
@@ -580,14 +603,22 @@
     flex-wrap: wrap;
 }
 
+/* CTA 위 스토어 버튼 — 흰 배경이니 검정 유지 */
+.cta .btn-store {
+    background-color: var(--color-black);
+    color: var(--color-text);
+}
+
 .cta__mockup {
     display: flex;
     justify-content: flex-end;
 }
 .cta__mockup img {
     max-width: 280px;
+    max-height: 480px;
     width: 100%;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.2));
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
 }
 
 /* CTA 반응형 */
@@ -596,23 +627,20 @@
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .cta__btns {
-        justify-content: center;
-    }
+    .cta__btns { justify-content: center; }
     .cta__mockup {
         justify-content: center;
+        order: -1;
     }
+    .cta__mockup img { max-width: 200px; max-height: 360px; }
 }
 @media (max-width: 767px) {
-    .cta__title {
-        font-size: var(--fs-h3);
-    }
-    .cta__mockup img {
-        max-width: 200px;
-    }
+    .cta__title { font-size: var(--fs-h3); }
+    .cta__mockup img { max-width: 160px; max-height: 280px; }
 }
 
-/* ─── FOOTER ──────────────────────────────────── */
+
+/* ─── FOOTER — bg: black ──────────────────────── */
 .footer {
     background-color: var(--color-black);
     padding-block: var(--sp-sm);
@@ -634,14 +662,14 @@
 .footer__logo img {
     height: 24px;
     width: auto;
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .footer__info p {
     font-family: var(--font-body);
     font-size: var(--fs-badge);
     color: var(--color-text);
-    opacity: 0.5;
+    opacity: 0.45;
     line-height: 1.8;
 }
 
@@ -658,7 +686,7 @@
 .footer__copy {
     font-size: var(--fs-badge);
     color: var(--color-text);
-    opacity: 0.4;
+    opacity: 0.35;
 }
 
 .footer__sns {
@@ -666,18 +694,12 @@
     align-items: center;
     gap: 16px;
 }
-
 .footer__sns a {
-    opacity: 0.5;
+    opacity: 0.45;
     transition: opacity var(--tr-fast);
 }
-.footer__sns a:hover {
-    opacity: 1;
-}
-.footer__sns img {
-    width: 20px;
-    height: 20px;
-}
+.footer__sns a:hover { opacity: 1; }
+.footer__sns img { width: 20px; height: 20px; }
 
 /* footer 반응형 */
 @media (max-width: 767px) {
@@ -690,3 +712,20 @@
         align-items: flex-start;
     }
 }
+
+
+/* ─── HEADER SCROLL JS 처리용 ─────────────────── */
+/*
+  index.html <body> 닫기 전에 아래 script 추가:
+
+  <script>
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    });
+  </script>
+*/
