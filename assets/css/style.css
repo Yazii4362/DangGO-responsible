@@ -1,6 +1,5 @@
 ﻿@import url(common.css);
 
-/* ??? HEADER ??????????????????????????????????? */
 .header {
     position: fixed;
     top: 0;
@@ -11,7 +10,7 @@
     transition: background-color 400ms ease, box-shadow 400ms ease;
 }
 
-/* ?ㅽ겕濡????대몢???ㅻ뜑 */
+
 .header--scrolled {
     background-color: rgba(30, 30, 30, 0.92);
     backdrop-filter: blur(12px);
@@ -58,7 +57,7 @@
     opacity: 1;
 }
 
-/* ?ㅽ겕濡??? nav 留곹겕 ?곗깋?쇰줈 */
+
 .header--scrolled .nav a {
     color: #F9F4EE;
 }
@@ -67,27 +66,24 @@
     opacity: 1;
 }
 
-/* ?ㅻ뜑 踰꾪듉 ??湲곕낯: 寃??諛곌꼍 */
+
 .header .btn-app {
     background-color: #1E1E1E;
     color: #F9F4EE;
     border-color: transparent;
 }
-/* ?ㅽ겕濡??? primary 諛곌꼍?쇰줈 諛섏쟾 */
+
 .header--scrolled .btn-app {
     background-color: #F5F278;
     color: #1E1E1E;
 }
 
-/* 紐⑤컮?? nav + btn-app ?④? ??common.css .nav { display:none } ?쇰줈 泥섎━ */
 @media (max-width: 767px) and (min-width: 320px) {
     .header__right .btn-app {
         display: none;
     }
 }
 
-
-/* ??? KV ?뱀뀡 ??bg: primary(yellow) ???????????? */
 .kv {
     background-color: #F5F278;
     padding-top: 124px;
@@ -142,7 +138,6 @@
     flex-wrap: wrap;
 }
 
-/* ?ㅽ넗??踰꾪듉 */
 .btn-store {
     display: inline-flex;
     align-items: center;
@@ -169,7 +164,7 @@
     box-shadow: 0 6px 20px rgba(0,0,0,.30);
 }
 
-/* ?앹떆 + floating badges */
+
 .kv__taxi-wrap {
     position: relative;
     width: 100%;
@@ -185,7 +180,6 @@
     object-position: center bottom;
 }
 
-/* floating badge 媛쒕퀎 ?꾩튂 & ?좊땲硫붿씠??*/
 .floating-1 {
     --_rotate: -6deg;
     top: 8%;
@@ -215,23 +209,31 @@
     animation-delay: 1.2s;
 }
 
+/* KV floating badge style */
+.kv .kv-badge {
+    background: rgba(249, 244, 238, 0.9);
+    box-shadow: 0 10px 24px rgba(30, 30, 30, 0.16);
+    border-width: 2.5px;
+}
+.kv .kv-badge:hover {
+    box-shadow: 0 14px 28px rgba(30, 30, 30, 0.2);
+}
 /* KV floating badge size tuning */
-.kv .pill-badge {
+.kv .kv-badge {
     padding: 9px 16px;
     font-size: 0.75rem;
 }
-.kv .pill-badge--sm {
+.kv .kv-badge.pill-badge--sm {
     padding: 7px 12px;
     font-size: 0.6875rem;
 }
 
-/* KV ?쒕툝由?*/
 @media (max-width: 1024px) and (min-width: 768px) {
-    .kv .pill-badge {
+    .kv .kv-badge {
         padding: 8px 14px;
         font-size: 0.6875rem;
     }
-    .kv .pill-badge--sm {
+    .kv .kv-badge.pill-badge--sm {
         padding: 6px 10px;
         font-size: 0.625rem;
     }
@@ -240,7 +242,6 @@
     .kv__inner { gap: 24px; }
 }
 
-/* KV 紐⑤컮??*/
 @media (max-width: 767px) and (min-width: 320px) {
     .btn-store--google { display: none; }
     .btn-store--apple { display: none; }
@@ -269,11 +270,11 @@
         width: min(100%, 520px);
         height: 240px;
     }
-    .kv .pill-badge {
+    .kv .kv-badge {
         padding: 6px 10px;
         font-size: 0.625rem;
     }
-    .kv .pill-badge--sm {
+    .kv .kv-badge.pill-badge--sm {
         padding: 5px 8px;
         font-size: 0.5625rem;
     }
@@ -284,7 +285,6 @@
 }
 
 
-/* ??? ABOUT ?뱀뀡 ??bg: dark ????????????????????? */
 .about {
     background-color: #302F32;    /* dark */
     padding-block: 110px;
@@ -476,7 +476,6 @@
 }
 
 
-/* ??? FEATURES ?뱀뀡 ??bg: dark ????????????????? */
 .features {
     background-color: #302F32;    /* dark */
 }
@@ -488,7 +487,7 @@
 }
 .features__pin img {
     width: 200px;
-    /* 紐⑤컮??height ?쒗븳 */
+
     max-height: 200px;
     object-fit: contain;
     object-position: center;
@@ -529,12 +528,12 @@
 }
 
 
-/* ??? DRIVER ?뱀뀡 ??bg: white ?????????????????? */
+
 .driver {
     background-color: #FFFFFF;  /* white */
 }
 
-/* driver ?띿뒪??寃??*/
+
 .driver .section-label { color: #1E1E1E; opacity: 0.45; }
 .driver .section-title { color: #1E1E1E; }
 .driver .section-sub   { color: #1E1E1E; }
@@ -582,7 +581,7 @@
     min-width: 480px;
     max-width: 480px;
     aspect-ratio: 3 / 4;
-    /* 紐⑤컮??height ?쒗븳 */
+  
     max-height: 480px;
     object-fit: cover;
     object-position: center top;
@@ -619,9 +618,32 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 }
-.driver__overlay-badges .pill-badge {
-    background: rgba(249, 244, 238, 0.12);
-    backdrop-filter: blur(4px);
+.card-badge1 {
+    background: rgba(30, 30, 30, 0.42);
+    backdrop-filter: blur(6px);
+    border-width: 1.5px;
+    color: #2dff03;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.card-badge2 {
+    background: rgba(30, 30, 30, 0.42);
+    backdrop-filter: blur(6px);
+    border-width: 1.5px;
+    color: #fbff26;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.card-badge::after {
+    border-width: 1px;
+}
+
+.driver__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.driver__overlay-badges .card-badge {
+    background: rgba(7, 231, 93, 0.205);
 }
 .driver__overlay-meta {
     margin: 0;
@@ -646,7 +668,7 @@
     height: .625rem;
     border-radius: 50%;
     border: 0;
-    background: rgba(255, 255, 255, .45);
+    background: rgba(34, 10, 10, 0.45);
     cursor: pointer;
     transition: transform 150ms ease, background-color 150ms ease;
 }
@@ -695,7 +717,6 @@
     line-height: 1.55;
 }
 
-/* driver 諛섏쓳??*/
 @media (max-width: 1024px) and (min-width: 768px) {
     .driver__layout {
         grid-template-columns: 1fr;
@@ -726,8 +747,41 @@
     .driver__slide-item img { max-height: 480px; }
 }
 
+/* PC 버전: 기본적으로 1열 배치 */
+.driver__checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* 항목 간 간격 */
+}
 
-/* ??? REVIEW ?뱀뀡 ??bg: dark ??????????????????? */
+.driver__checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* 모바일 버전: 768px 이하에서 2x2 배치 */
+@media (max-width: 768px) {
+    .driver__checklist {
+        flex-direction: row; 
+        flex-wrap: wrap;    
+        gap: 30px 0;       
+    }
+
+    .driver__checklist li {
+        width: 50%;         
+        flex-direction: column; 
+        align-items: center;   
+        text-align: center;
+        padding: 0 10px;   
+    }
+    
+    .driver__checklist li .check-icon {
+        margin-bottom: 8px;
+    }
+}
+
+
 .review {
     background-color: #302F32;    /* dark */
 }
@@ -803,9 +857,8 @@
     gap: 0.5rem;
     margin-bottom: 0.125rem;
 }
-.review-card__badges .pill-badge {
-    background: rgba(249, 244, 238, 0.12);
-    backdrop-filter: blur(4px);
+.review-card__badges .card-badge {
+    background: rgba(30, 30, 30, 0.46);
 }
 .review-card__stars,
 .review-card__name,
@@ -867,12 +920,12 @@
     font-family: 'TmoneyRoundWind', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
-    color: #1E1E1E;             /* white bg ??寃???띿뒪??*/
+    color: #1E1E1E;            
     line-height: 1.25;
     margin-bottom: 20px;
 }
 
-/* "10留? 媛뺤“ ??point color */
+
 .cta__title .color-point {
     color: #FF99B0;
 }
@@ -892,7 +945,6 @@
     flex-wrap: wrap;
 }
 
-/* CTA ???ㅽ넗??踰꾪듉 ????諛곌꼍?대땲 寃???좎? */
 .cta .btn-store {
     background-color: #1E1E1E;
     color: #F9F4EE;
@@ -911,7 +963,7 @@
     filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
 }
 
-/* CTA 諛섏쓳??*/
+
 @media (max-width: 1024px) and (min-width: 768px) {
     .cta__inner {
         grid-template-columns: 1fr;
@@ -943,7 +995,6 @@
 }
 
 
-/* ??? FOOTER ??bg: black ???????????????????????? */
 .footer {
     background-color: #1E1E1E;
     padding-block: 40px;
@@ -1011,7 +1062,7 @@
     object-position: center;
 }
 
-/* footer 諛섏쓳??*/
+
 @media (max-width: 767px) and (min-width: 320px) {
     .footer__inner {
         align-items: center;
@@ -1031,21 +1082,5 @@
     .footer__sns { justify-content: center; }
 }
 
-
-/* ??? HEADER SCROLL JS 泥섎━????????????????????? */
-/*
-  index.html <body> ?リ린 ?꾩뿉 ?꾨옒 script 異붽?:
-
-  <script>
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.remove('header--scrolled');
-      }
-    });
-  </script>
-*/
 
 
