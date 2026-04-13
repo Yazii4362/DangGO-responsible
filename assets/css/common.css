@@ -331,11 +331,6 @@ img     { max-width: 100%; display: block; }
     background-color: #F5F278;
     border-radius: 9999px;
     box-shadow: 0 2px 8px rgba(0,0,0,.20);
-    transition: transform 250ms ease, box-shadow 250ms ease;
-}
-.hero-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(245,242,120,.50);
 }
 
 .pill-badge {
@@ -649,10 +644,5 @@ img     { max-width: 100%; display: block; }
 
 /* ??? 19. MISC ????????????????????????????????? */
 html { scroll-behavior: smooth; }
-
-::selection {
-    background-color: #F5F278;
-    color: #1E1E1E;
-}
 
 
