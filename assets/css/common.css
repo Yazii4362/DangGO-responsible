@@ -252,7 +252,7 @@ img     { max-width: 100%; display: block; }
 .text-right  { text-align: right; }
 
 
-.color-primary { color: #F5F278; }
+.color-primary { color: #FF99B0; }
 .color-point   { color: #FF99B0; }
 .color-text    { color: #F9F4EE; }
 .color-black   { color: #1E1E1E; }
@@ -433,7 +433,7 @@ img     { max-width: 100%; display: block; }
     line-height: 1.35;
 }
 .about-slogan span {
-    color: #F5F278;
+    color: #FF99B0;
 }
 
 .about-brand {
