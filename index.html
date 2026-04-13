@@ -20,8 +20,9 @@
                     <ul class="nav">
                         <li><a href="#about">브랜드</a></li>
                         <li><a href="#features">서비스</a></li>
-                        <li><a href="#review">리뷰</a></li>
                         <li><a href="#driver">드라이버</a></li>
+                        <li><a href="#review">리뷰</a></li>
+                        
                     </ul>
                 </nav>
                 <a href="https://apps.apple.com/kr/" class="btn-app">댕고택시 예약하기</a>
@@ -33,8 +34,12 @@
     <section class="kv">
         <div class="kv__inner">
             <div class="kv__text">
-                <span class="hero-badge">🏆 국내 1위 펫택시 앱</span>
-                <h1 class="kv__title">DangGO!</h1>
+                <span class="hero-badge hero-badge--no1">
+                    <span class="hero-badge__trophy" aria-hidden="true">🏆</span>
+                    <span class="hero-badge__text">국내 <strong>1위</strong> 펫택시 앱</span>
+                    <span class="hero-badge__shimmer" aria-hidden="true"></span>
+                </span>
+                <h1 class="kv__title">DangGO</h1>
                 <p class="kv__sub">이동부터 케어까지 반려동물 외출의 모든 것</p>
                 <div class="kv__btns">
                     <a href="#" class="btn-store btn-store--google">
@@ -55,6 +60,7 @@
                 <span class="pill-badge kv-badge pill-badge--orange floating-badge floating-4 pill-badge--sm">🗓️ 정기 예약</span>
             </div>
         </div>
+        <div class="kv__road"></div>
     </section>
 
     <!-- ABOUT -->
@@ -62,7 +68,7 @@
         <div class="about__inner">
             <p class="about-slogan">
                 <span>이동</span>부터 <span>케어</span>까지<br>
-                반려동물 외출의 모든 것
+                <strong>반려동물 외출의 모든 것</strong>
             </p>
             <h2 class="about-brand">DangGo</h2>
         </div>
@@ -71,226 +77,126 @@
     <!-- HOW IT WORKS -->
     <section class="howto section" id="howto">
       <div class="container">
-
         <div class="howto__header">
           <p class="section-label">How it works</p>
-          <h2 class="section-title">댕고, 어렵지 않아요!</h2>
-
-          <div class="howto__tabs">
-            <button class="howto__tab howto__tab--active" data-target="howto-panel-0">📍 이동 예약하기 </button>
-            <button class="howto__tab" data-target="howto-panel-1">💳  간편 결제하기</button>
-            <button class="howto__tab" data-target="howto-panel-2">🚕  편안한 운행하기</button>
-          </div>
+          <h2 class="section-title">댕고,<br>어렵지 않아요!</h2>
+          <p class="section-sub">앱 하나로 끝나는 반려동물 외출 준비</p>
         </div>
 
-        <div class="howto__panel" id="howto-panel-0">
-          <div class="howto__panel-inner">
-            <div class="howto__mockup">
-              <img src="assets/images/mockup01.png" alt="앱 미리보기">
+        <div class="howto__steps-wrap">
+          <div class="howto__step-card" data-num="01">
+            <div class="howto__step-left">
+              <div class="howto__step-num">01</div>
+              <div class="howto__step-line"></div>
             </div>
-            <div class="howto__content">
-              <ol class="howto__steps">
-                <li class="howto__step">
-                  <span class="howto__step-num">1</span>
-                  <div>
-                    <strong class="howto__step-title">간편한 목적지 설정</strong>
-                    <p>자주 가는 반려동물 시설들을 즐겨찾기로 등록하면 간단하게 호출할 수 있어요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">2</span>
-                  <div>
-                    <strong class="howto__step-title">실시간 위치 관제</strong>
-                    <p>이동 중 혼자라도 걱정 없어요. 이동거리, 경로에서 실시간 위치 확인이 가능해요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">3</span>
-                  <div>
-                    <strong class="howto__step-title">자동 결제 시스템</strong>
-                    <p>미리 등록한 결제 수단으로 자동 결제. 도착 후 앱에서 영수증을 확인할 수 있어요.</p>
-                  </div>
-                </li>
-              </ol>
+            <div class="howto__step-body">
+              <span class="howto__step-tag">목적지 설정</span>
+              <strong class="howto__step-title">어디든, 30초면 충분해요</strong>
+              <p>자주 가는 병원이나 미용실은 즐겨찾기에 저장해두면, 다음엔 탭 한 번으로 바로 부를 수 있어요.</p>
+            </div>
+            <div class="howto__step-mockup">
+              <img src="assets/images/mockup01.png" alt="목적지 설정 화면">
             </div>
           </div>
-        </div>
 
-        <div class="howto__panel" id="howto-panel-1">
-          <div class="howto__panel-inner">
-            <div class="howto__mockup">
-              <img src="assets/images/mockup-side.png" alt="그냥 설명">
+          <div class="howto__step-card" data-num="02">
+            <div class="howto__step-left">
+              <div class="howto__step-num">02</div>
+              <div class="howto__step-line"></div>
             </div>
-            <div class="howto__content">
-              <ol class="howto__steps">
-                <li class="howto__step">
-                  <span class="howto__step-num">1</span>
-                  <div>
-                    <strong class="howto__step-title">반복되는 일상 관리</strong>
-                    <p>정기적으로 반복되는 동물병원이나 미용실 방문 일정을 댕고로 한 번에 관리해요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">2</span>
-                  <div>
-                    <strong class="howto__step-title">전담 드라이버 우선 배차</strong>
-                    <p>자주 이용한 드라이버를 즐겨찾기 해두면 다음 예약 시 우선적으로 배차돼요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">3</span>
-                  <div>
-                    <strong class="howto__step-title">유연한 일정 변경</strong>
-                    <p>급하게 일정이 바뀌어도 출발 전까지 일정 변경 및 취소를 자유롭게 할 수 있어요.</p>
-                  </div>
-                </li>
-              </ol>
+            <div class="howto__step-body">
+              <span class="howto__step-tag">실시간 위치 확인</span>
+              <strong class="howto__step-title">혼자 보내도 걱정 없어요</strong>
+              <p>이동 중 위치를 앱에서 실시간으로 확인할 수 있어요. 옆에 없어도 함께 있는 것처럼 안심돼요.</p>
+            </div>
+            <div class="howto__step-mockup">
+              <img src="assets/images/mockup-side.png" alt="실시간 위치 화면">
+            </div>
+          </div>
+
+          <div class="howto__step-card" data-num="03">
+            <div class="howto__step-left">
+              <div class="howto__step-num">03</div>
+            </div>
+            <div class="howto__step-body">
+              <span class="howto__step-tag">자동 결제</span>
+              <strong class="howto__step-title">도착하면 알아서 끝나요</strong>
+              <p>등록해둔 결제 수단으로 자동으로 처리돼요. 지갑 꺼낼 필요 없이 영수증도 앱에서 바로 확인해요.</p>
+            </div>
+            <div class="howto__step-mockup">
+              <img src="assets/images/modal01.png" alt="결제 화면">
             </div>
           </div>
         </div>
-
-        <div class="howto__panel" id="howto-panel-2">
-          <div class="howto__panel-inner">
-            <div class="howto__mockup">
-              <img src="assets/images/modal01.png" alt="앱 다운받기">
-            </div>
-            <div class="howto__content">
-              <ol class="howto__steps">
-                <li class="howto__step">
-                  <span class="howto__step-num">1</span>
-                  <div>
-                    <strong class="howto__step-title">맞춤 드라이버 선발</strong>
-                    <p>댕고의 드라이버는 반려동물 전문 교육을 이수한 분들로만 구성되어 있어요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">2</span>
-                  <div>
-                    <strong class="howto__step-title">투명한 평점 & 리뷰</strong>
-                    <p>매 이용 후 평점과 리뷰를 남길 수 있어요. 축적된 데이터로 서비스를 개선해요.</p>
-                  </div>
-                </li>
-                <li class="howto__step">
-                  <span class="howto__step-num">3</span>
-                  <div>
-                    <strong class="howto__step-title">전문 교육 이수 확인</strong>
-                    <p>드라이버 프로필에서 보유 교육 이수 항목을 직접 확인할 수 있어요.</p>
-                  </div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- FEATURES -->
     <section class="features section" id="features">
         <div class="container">
-            <p class="section-label text-center">Features</p>
-            <h2 class="section-title text-center">
-                댕고 택시,<br>이렇게 활용해보세요
-            </h2>
+            <p class="section-label text-center">Use cases</p>
+            <h2 class="section-title text-center">댕고 택시,<br>이렇게 활용해보세요</h2>
             <p class="section-sub text-center">
-                더 나은 반려생활을 위한 댕고의 한 걸음, <br>
-                반려동물과의 모든 외출을 책임질게요.
+                반려동물과 함께하고 싶었지만<br>
+                망설였던 그 순간들, 이제 댕고가 함께해요.
             </p>
-            <div class="features__pin">
-                <img src="assets/images/map.svg" alt="지도 핀 일러스트">
+
+            <div class="usecase-stack">
+
+                <!-- row 1: 긴급상황 -->
+                <div class="usecase-stack__row usecase-stack__row--1">
+                    <div class="usecase-card usecase-card--lg usecase-card--dark usecase-card--tail-center">
+                        <div class="usecase-card__body">
+                            <span class="usecase-card__tag">긴급 상황</span>
+                            <strong class="usecase-card__title"><mark class="hl">새벽</mark>에 갑자기 아이가 아픈데 어떡하지?</strong>
+                            <p class="usecase-card__desc">24시간 긴급출동, 지금 바로 부를 수 있어요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- row 2: 중간 1개 -->
+                <div class="usecase-stack__row usecase-stack__row--2">
+                    <div class="usecase-card usecase-card--md usecase-card--white usecase-card--tail-right">
+                        <div class="usecase-card__body">
+                            <span class="usecase-card__tag">여행</span>
+                            <strong class="usecase-card__title"><mark class="hl">여행</mark> 중에 펫호텔 이동은 어떻게 하지?</strong>
+                            <p class="usecase-card__desc">체크인·체크아웃 이동을 댕고가 대신해드려요.</p>
+                        </div>
+                    </div>
+                    <div class="usecase-card usecase-card--md usecase-card--dark usecase-card--tail-left">
+                        <div class="usecase-card__body">
+                            <span class="usecase-card__tag">병원 진료</span>
+                            <strong class="usecase-card__title">오늘 <mark class="hl">진료</mark>인데 내가 데리러 못 가는데?</strong>
+                            <p class="usecase-card__desc">가족 공유 계정으로 누구든 대신 보낼 수 있어요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- row 3: 작은 2개 -->
+                <div class="usecase-stack__row usecase-stack__row--3">
+                    <div class="usecase-card usecase-card--sm usecase-card--white usecase-card--tail-right">
+                        <div class="usecase-card__body">
+                            <span class="usecase-card__tag">정기 미용</span>
+                            <strong class="usecase-card__title">매주 <mark class="hl">미용실</mark> 예약, 매번 해야 하나?</strong>
+                            <p class="usecase-card__desc">정기 예약 한 번 설정하면 매주 자동으로 돼요.</p>
+                        </div>
+                    </div>
+                    <div class="usecase-card usecase-card--sm usecase-card--dark usecase-card--tail-left">
+                        <div class="usecase-card__body">
+                            <span class="usecase-card__tag">출장</span>
+                            <strong class="usecase-card__title">갑자기 <mark class="hl">출장</mark>인데 아이는 어떡하지?</strong>
+                            <p class="usecase-card__desc">댕고가 아이 이동을 대신 챙겨드려요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 택시: 도로 위 중앙 고정 -->
+                </div>
             </div>
-            <div class="grid-4 features__cards">
-                <div class="card features__card">
-                    <div class="features__card-icon">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- scissors base -->
-                            <ellipse cx="28" cy="44" rx="18" ry="5" fill="rgba(0,0,0,0.10)"/>
-                            <!-- body -->
-                            <rect x="14" y="18" width="28" height="22" rx="6" fill="#FFD166"/>
-                            <rect x="14" y="18" width="28" height="8" rx="6" fill="#FF9F1C"/>
-                            <!-- scissors blades -->
-                            <path d="M20 30 Q24 26 28 30 Q24 34 20 30Z" fill="#fff" opacity=".9"/>
-                            <path d="M36 30 Q32 26 28 30 Q32 34 36 30Z" fill="#fff" opacity=".9"/>
-                            <!-- paw print -->
-                            <circle cx="28" cy="22" r="3" fill="#fff" opacity=".85"/>
-                            <circle cx="23" cy="20" r="1.5" fill="#fff" opacity=".7"/>
-                            <circle cx="33" cy="20" r="1.5" fill="#fff" opacity=".7"/>
-                            <!-- shine -->
-                            <ellipse cx="20" cy="21" rx="3" ry="1.5" fill="#fff" opacity=".3" transform="rotate(-20 20 21)"/>
-                        </svg>
-                    </div>
-                    <h4 class="features__card-title">펫 미용실 이동</h4>
-                    <p class="features__card-desc">정기 예약 설정 한 번으로 매주 자동 예약</p>
-                </div>
-                <div class="card features__card">
-                    <div class="features__card-icon">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="28" cy="46" rx="18" ry="4" fill="rgba(0,0,0,0.10)"/>
-                            <!-- suitcase body -->
-                            <rect x="12" y="22" width="32" height="22" rx="5" fill="#4ECDC4"/>
-                            <rect x="12" y="22" width="32" height="8" rx="5" fill="#2BB5AC"/>
-                            <!-- handle -->
-                            <path d="M21 22 Q21 14 28 14 Q35 14 35 22" stroke="#2BB5AC" stroke-width="3" fill="none" stroke-linecap="round"/>
-                            <!-- strap -->
-                            <rect x="12" y="29" width="32" height="3" fill="#2BB5AC" opacity=".5"/>
-                            <rect x="26" y="22" width="4" height="22" fill="#2BB5AC" opacity=".4"/>
-                            <!-- paw -->
-                            <circle cx="28" cy="36" r="3.5" fill="#fff" opacity=".85"/>
-                            <circle cx="23.5" cy="33.5" r="1.5" fill="#fff" opacity=".7"/>
-                            <circle cx="32.5" cy="33.5" r="1.5" fill="#fff" opacity=".7"/>
-                            <ellipse cx="16" cy="24" rx="3" ry="1.5" fill="#fff" opacity=".25" transform="rotate(-20 16 24)"/>
-                        </svg>
-                    </div>
-                    <h4 class="features__card-title">여행상황</h4>
-                    <p class="features__card-desc">여행 중 펫호텔 체크인, 체크아웃, 이동까지 편리하게</p>
-                </div>
-                <div class="card features__card">
-                    <div class="features__card-icon">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="28" cy="46" rx="18" ry="4" fill="rgba(0,0,0,0.10)"/>
-                            <!-- phone body -->
-                            <rect x="16" y="10" width="24" height="38" rx="5" fill="#A78BFA"/>
-                            <rect x="16" y="10" width="24" height="12" rx="5" fill="#7C3AED"/>
-                            <!-- screen -->
-                            <rect x="19" y="16" width="18" height="24" rx="3" fill="#EDE9FE"/>
-                            <!-- family icons -->
-                            <circle cx="24" cy="24" r="3" fill="#7C3AED" opacity=".8"/>
-                            <circle cx="32" cy="24" r="3" fill="#7C3AED" opacity=".8"/>
-                            <circle cx="28" cy="30" r="2.5" fill="#A78BFA"/>
-                            <!-- share arrows -->
-                            <path d="M22 34 Q28 31 34 34" stroke="#7C3AED" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".6"/>
-                            <!-- home button -->
-                            <circle cx="28" cy="44" r="2" fill="#7C3AED" opacity=".5"/>
-                            <ellipse cx="20" cy="13" rx="3" ry="1.5" fill="#fff" opacity=".25" transform="rotate(-20 20 13)"/>
-                        </svg>
-                    </div>
-                    <h4 class="features__card-title">가족 공유 계정</h4>
-                    <p class="features__card-desc">가족 모두가 하나의 계정으로 댕고 서비스를 이용할 수 있어요.</p>
-                </div>
-                <div class="card features__card">
-                    <div class="features__card-icon">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <ellipse cx="28" cy="46" rx="18" ry="4" fill="rgba(0,0,0,0.10)"/>
-                            <!-- siren light base -->
-                            <rect x="16" y="30" width="24" height="14" rx="4" fill="#FF6B6B"/>
-                            <rect x="16" y="30" width="24" height="6" rx="4" fill="#E63946"/>
-                            <!-- dome -->
-                            <ellipse cx="28" cy="30" rx="12" ry="10" fill="#FF9F1C"/>
-                            <ellipse cx="28" cy="30" rx="8" ry="7" fill="#FFD166"/>
-                            <!-- light beam left -->
-                            <path d="M16 24 L8 16" stroke="#FFD166" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
-                            <path d="M14 28 L4 24" stroke="#FFD166" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                            <!-- light beam right -->
-                            <path d="M40 24 L48 16" stroke="#FFD166" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
-                            <path d="M42 28 L52 24" stroke="#FFD166" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-                            <!-- center glow -->
-                            <circle cx="28" cy="30" r="4" fill="#fff" opacity=".6"/>
-                            <ellipse cx="22" cy="26" rx="3" ry="1.5" fill="#fff" opacity=".3" transform="rotate(-20 22 26)"/>
-                        </svg>
-                    </div>
-                    <h4 class="features__card-title">24시간 긴급출동</h4>
-                    <p class="features__card-desc">새벽, 주말, 공휴일 관계없이 언제든 긴급 이동을 지원해요.</p>
-                </div>
+            <div class="usecase-stack__taxi">
+                <img src="assets/images/taxi.png" alt="댕고 택시">
+                <span class="usecase-stack__beam usecase-stack__beam--1"></span>
+                <span class="usecase-stack__beam usecase-stack__beam--2"></span>
             </div>
         </div>
     </section>
@@ -304,8 +210,8 @@
                 <span class="color-primary">댕고드라이버</span>를 만나보세요
             </h2>
             <p class="section-sub text-center">
-                드라이버 한 분 한 분이 직접 인터뷰하고,<br>
-                스펙한 기준 이상을 검증 받은 분들입니다.
+                드라이버 한 분 한 분을 직접 인터뷰하고,<br>
+                검증하여 모셨습니다.
             </p>
             <div class="driver__layout">
                 <div class="driver__slides">
@@ -625,59 +531,6 @@
     window.addEventListener('scroll', () => {
         header.classList.toggle('header--scrolled', window.scrollY > 80);
     });
-
-    (function() {
-        var tabs = document.querySelectorAll('.howto__tab');
-        var panels = [
-            document.getElementById('howto-panel-0'),
-            document.getElementById('howto-panel-1'),
-            document.getElementById('howto-panel-2')
-        ];
-
-        var isScrollingByClick = false;
-        var scrollTimer = null;
-
-        tabs.forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                var targetId = tab.dataset.target;
-                var target = document.getElementById(targetId);
-                if (!target) return;
-
-                tabs.forEach(function(t) { t.classList.remove('howto__tab--active'); });
-                tab.classList.add('howto__tab--active');
-
-                var tabsBar = document.querySelector('.howto__tabs');
-                var tabsH = tabsBar ? tabsBar.offsetHeight : 0;
-                var headerH = 64;
-                var offsetTop = target.getBoundingClientRect().top + window.scrollY - headerH - tabsH - 16;
-
-                isScrollingByClick = true;
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(function() { isScrollingByClick = false; }, 800);
-
-                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-            });
-        });
-
-        window.addEventListener('scroll', function() {
-            if (isScrollingByClick) return;
-
-            var headerH = 64;
-            var tabsBar = document.querySelector('.howto__tabs');
-            var tabsH = tabsBar ? tabsBar.offsetHeight : 0;
-            var threshold = headerH + tabsH + 32;
-
-            var activeIdx = 0;
-            panels.forEach(function(panel, i) {
-                if (panel && panel.getBoundingClientRect().top <= threshold) {
-                    activeIdx = i;
-                }
-            });
-
-            tabs.forEach(function(t) { t.classList.remove('howto__tab--active'); });
-            if (tabs[activeIdx]) tabs[activeIdx].classList.add('howto__tab--active');
-        });
-    })();
 
     (function() {
         var items = document.querySelectorAll('.driver__slide-item');

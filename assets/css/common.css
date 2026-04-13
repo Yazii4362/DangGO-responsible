@@ -195,6 +195,8 @@ img     { max-width: 100%; display: block; }
     .container {
         padding-inline: 20px;
     }
+    .section-title { font-size: 1.75rem; }
+    .section-sub   { font-size: 0.9375rem; }
 }
 
 .section {
@@ -333,6 +335,62 @@ img     { max-width: 100%; display: block; }
     box-shadow: 0 2px 8px rgba(0,0,0,.20);
 }
 
+/* 국내 1위 뱃지 강화 */
+.hero-badge--no1 {
+    position: relative;
+    overflow: hidden;
+    padding: 9px 20px 9px 16px;
+    background: linear-gradient(135deg, #FFE566 0%, #F5F278 45%, #FFD700 100%);
+    border: 1.5px solid rgba(255, 215, 0, 0.6);
+    box-shadow:
+        0 2px 0 rgba(255,255,255,0.55) inset,
+        0 4px 16px rgba(245, 200, 0, 0.45),
+        0 1px 4px rgba(0,0,0,0.18);
+    gap: 7px;
+    animation: badgePulse 3.5s ease-in-out infinite;
+    cursor: default;
+}
+
+.hero-badge__trophy {
+    font-size: 1rem;
+    line-height: 1;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+.hero-badge__text {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #5A4200;
+    letter-spacing: -0.01em;
+}
+.hero-badge__text strong {
+    font-weight: 800;
+    color: #3A2800;
+}
+.hero-badge__shimmer {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.55) 50%,
+        transparent 100%
+    );
+    animation: badgeShimmer 3.5s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes badgeShimmer {
+    0%   { left: -75%; }
+    40%  { left: 125%; }
+    100% { left: 125%; }
+}
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 2px 0 rgba(255,255,255,0.55) inset, 0 4px 16px rgba(245,200,0,0.45), 0 1px 4px rgba(0,0,0,0.18); }
+    50%       { box-shadow: 0 2px 0 rgba(255,255,255,0.55) inset, 0 6px 24px rgba(245,200,0,0.65), 0 1px 4px rgba(0,0,0,0.18); }
+}
+
 .pill-badge {
     --badge-stroke: #F5F278;
     --badge-inner-stroke: #FFF6B8;
@@ -418,6 +476,33 @@ img     { max-width: 100%; display: block; }
         transparent 48px
     );
     opacity: .55;
+}
+
+.about .road-dash {
+    width: 100%;
+    height: 6px;
+    margin-bottom: 0;
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(255,255,255,0.6) 0,
+        rgba(255,255,255,0.6) 48px,
+        transparent 48px,
+        transparent 96px
+    );
+    opacity: 1;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .about .road-dash {
+        height: 4px;
+        background-image: repeating-linear-gradient(
+            to right,
+            rgba(255,255,255,0.6) 0,
+            rgba(255,255,255,0.6) 28px,
+            transparent 28px,
+            transparent 56px
+        );
+    }
 }
 
 .about-slogan {
@@ -536,7 +621,7 @@ img     { max-width: 100%; display: block; }
 
 .review-stat__label {
     font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: #F9F4EE;
     opacity: .65;
@@ -544,27 +629,13 @@ img     { max-width: 100%; display: block; }
 
 .review-stat__value {
     font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #F9F4EE;
     line-height: 1;
 }
 .review-stat__value--point {
     color: #FF99B0;
-}
-
-/* 由щ럭 移대뱶 洹몃━?? 4????紐⑤컮??2횞2 */
-.review-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-}
-@media (max-width: 1024px) and (min-width: 768px) {
-    .review-cards { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 767px) and (min-width: 320px) {
-    .review-cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
 /* 由щ럭 移대뱶 */
