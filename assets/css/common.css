@@ -592,49 +592,51 @@ img     { max-width: 100%; display: block; }
 
 /* ??? 17. REVIEW COMPONENTS ???????????????????? */
 
-/* ?듦퀎 ??background ?놁쓬, ???놁쓬 */
+/* 리뷰 통계 */
 .review-stats {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 40px;
+    gap: 48px;
     flex-wrap: wrap;
-}
-@media (max-width: 767px) and (min-width: 320px) {
-    .review-stats {
-        gap: 20px 12px;
-        justify-content: center;
-    }
-    .review-stat {
-        flex: 0 0 48%;
-        max-width: 48%;
-    }
 }
 
 .review-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
+
+.review-stat__value {
+    font-family: 'TmoneyRoundWind', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #F5F278;
+    line-height: 1;
+    order: -1;
+}
+.review-stat__value--point { color: #FF99B0; }
 
 .review-stat__label {
     font-family: 'Pretendard', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: 500;
     color: #F9F4EE;
     opacity: .65;
 }
 
-.review-stat__value {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #F9F4EE;
-    line-height: 1;
-}
-.review-stat__value--point {
-    color: #FF99B0;
+@media (max-width: 767px) and (min-width: 320px) {
+    .review-stats {
+        gap: 24px 0;
+        justify-content: center;
+    }
+    .review-stat {
+        flex: 0 0 50%;
+        align-items: center;
+    }
+    .review-stat__value { font-size: 2rem; }
+    .review-stat__label { font-size: 0.75rem; }
 }
 
 /* 리뷰 카드 */

@@ -901,7 +901,7 @@ mark.hl {
 .driver__slides {
     position: relative;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     max-width: 340px;
     aspect-ratio: 480 / 620;
@@ -913,6 +913,8 @@ mark.hl {
     width: 100%;
     max-width: 340px;
     aspect-ratio: 480 / 620;
+    overflow: hidden;
+    border-radius: 20px;
 }
 .driver__slide-item {
     position: absolute;
@@ -1032,11 +1034,11 @@ mark.hl {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    padding-top: 0.25rem;
+    padding-top: 1.5rem;
 }
 .driver__dot {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 50%;
     border: 0;
     background: rgba(34, 10, 10, 0.45);
@@ -1136,9 +1138,43 @@ mark.hl {
 .review-stats {
     margin-top: 40px;
     margin-bottom: 40px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
 }
+
+.review-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
 .review-stat__value {
+    font-family: 'TmoneyRoundWind', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
     color: #F5F278;
+    line-height: 1;
+    order: -1;
+}
+.review-stat__value--point { color: #FF99B0; }
+
+.review-stat__label {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #F9F4EE;
+    opacity: .65;
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+    .review-stats { gap: 24px 0; }
+    .review-stat { flex: 0 0 50%; }
+    .review-stat__value { font-size: 2rem; }
+    .review-stat__label { font-size: 0.75rem; }
 }
 
 /* REVIEW marquee */
