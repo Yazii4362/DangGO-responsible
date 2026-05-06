@@ -63,13 +63,45 @@
  * 2. Design Tokens
  * ============================================================ */
 :root {
-    /* Color */
-    --color-primary: #F5F278;
-    --color-point:   #FF99B0;
+    /* ── Primary Scale (Yellow #F5F278) ── */
+    --primary-50:  #FFFCD2;
+    --primary-100: #FBF89E;
+    --primary-200: #F8F58D;
+    --primary-300: #F5F278;  /* base */
+    --primary-400: #E8E55C;
+    --primary-500: #C9C648;
+    --primary-600: #A6A338;
+
+    /* ── Point Scale (Pink #FF99B0) ── */
+    --point-50:  #FFE9EE;
+    --point-100: #FFD3DD;
+    --point-200: #FFB5C2;
+    --point-300: #FF99B0;  /* base */
+    --point-400: #FF7A99;
+    --point-500: #E85578;
+    --point-600: #C73D5F;
+
+    /* ── Semantic Colors ── */
+    --success-50:  #DCFCE7;
+    --success-500: #22C55E;
+    --success-600: #16A34A;
+    --warning-50:  #FEF3C7;
+    --warning-500: #F59E0B;
+    --error-50:    #FEE2E2;
+    --error-500:   #EF4444;
+    --info-50:     #DBEAFE;
+    --info-500:    #3B82F6;
+
+    /* ── Aliases (legacy + simple usage) ── */
+    --color-primary: var(--primary-300);
+    --color-point:   var(--point-300);
     --color-black:   #1E1E1E;
     --color-bg:      #302F32;
+    --color-bg-2:    #28272A;
     --color-text:    #F9F4EE;
+    --color-text-mute: rgba(249, 244, 238, .65);
     --color-white:   #FFFFFF;
+    --color-line:    rgba(249, 244, 238, .12);
 
     /* Font Family */
     --font-headline: 'TmoneyRoundWind', sans-serif;
@@ -98,30 +130,49 @@
     --sp-section:   6.875rem; /* 110px */
     --sp-title-gap: 1.25rem;
 
-    /* Layout */
+    /* Layout — Grid math corrected: 1440 - (40×2) = 1360 (using container-pad) */
+    /* For strict 12 col: 1200 content -> col 78px + gutter 24px */
     --container-width: 1440px;
     --container-pad:   40px;
     --grid-cols:       12;
     --grid-gutter:     24px;
-    --grid-col-width:  98px;
+    --grid-col-width:  78px;   /* corrected from 98px */
 
     /* Radius */
-    --r-sm:   0.625rem;
-    --r-md:   1.25rem;
+    --r-xs:   0.375rem;  /* 6px */
+    --r-sm:   0.625rem;  /* 10px */
+    --r-md:   1.25rem;   /* 20px */
+    --r-lg:   2rem;      /* 32px */
     --r-pill: 2.5rem;
     --r-full: 9999px;
 
-    /* Shadow */
-    --shadow-sm:           0 2px 8px rgba(0, 0, 0, .20);
-    --shadow-md:           0 6px 20px rgba(0, 0, 0, .30);
-    --shadow-lg:           0 12px 40px rgba(0, 0, 0, .38);
+    /* Shadow Scale (5 tiers) */
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, .12);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, .18);
+    --shadow-3: 0 8px 24px rgba(0, 0, 0, .24);
+    --shadow-4: 0 16px 40px rgba(0, 0, 0, .32);
+    --shadow-5: 0 28px 64px rgba(0, 0, 0, .40);
+
+    /* Legacy aliases */
+    --shadow-sm:           var(--shadow-2);
+    --shadow-md:           var(--shadow-3);
+    --shadow-lg:           var(--shadow-4);
     --shadow-glow-primary: 0 4px 20px rgba(245, 242, 120, .50);
     --shadow-glow-point:   0 4px 20px rgba(255, 153, 176, .50);
 
-    /* Transition */
-    --tr-fast: 150ms ease;
-    --tr-base: 250ms ease;
-    --tr-slow: 400ms ease;
+    /* Motion Tokens */
+    --motion-instant:    100ms;
+    --motion-base:       200ms;
+    --motion-smooth:     400ms;
+    --motion-expressive: 600ms;
+    --ease-out:    cubic-bezier(.2, .8, .2, 1);
+    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+
+    /* Legacy aliases */
+    --tr-fast: var(--motion-instant) ease;
+    --tr-base: var(--motion-base) var(--ease-out);
+    --tr-slow: var(--motion-smooth) var(--ease-out);
 }
 
 /* Tablet: 768px ~ 1024px */
@@ -279,6 +330,22 @@ p { font-size: var(--fs-b1); line-height: 1.6; }
 .bg-black   { background-color: var(--color-black); }
 .bg-white   { background-color: var(--color-white); }
 
+/* Tonal scale utilities */
+.bg-primary-50  { background-color: var(--primary-50); }
+.bg-primary-400 { background-color: var(--primary-400); }
+.bg-point-50    { background-color: var(--point-50); }
+.bg-point-400   { background-color: var(--point-400); }
+
+/* Semantic */
+.bg-success-50 { background-color: var(--success-50); }
+.bg-warning-50 { background-color: var(--warning-50); }
+.bg-error-50   { background-color: var(--error-50); }
+.bg-info-50    { background-color: var(--info-50); }
+.color-success { color: var(--success-500); }
+.color-warning { color: var(--warning-500); }
+.color-error   { color: var(--error-500); }
+.color-info    { color: var(--info-500); }
+
 
 /* ============================================================
  * 8. Buttons
@@ -294,28 +361,63 @@ p { font-size: var(--fs-b1); line-height: 1.6; }
     white-space: nowrap;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
     transition:
-        transform var(--tr-base),
-        box-shadow var(--tr-base),
-        background-color var(--tr-base);
+        transform var(--motion-base) var(--ease-out),
+        box-shadow var(--motion-base) var(--ease-out),
+        background-color var(--motion-base) var(--ease-out),
+        color var(--motion-base) var(--ease-out);
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--primary-300);
     color: var(--color-black);
     padding: 14px 28px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-2);
 }
 
 .btn-primary:hover {
-    background-color: #eeeb58;
+    background-color: var(--primary-400);
     box-shadow: var(--shadow-glow-primary);
     transform: translateY(-2px);
 }
 
 .btn-primary:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-sm);
+    background-color: var(--primary-500);
+    transform: translateY(1px);
+    box-shadow: var(--shadow-1);
+}
+
+.btn-primary:disabled,
+.btn-primary.is-disabled {
+    background-color: var(--primary-100);
+    color: rgba(30, 30, 30, .4);
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+}
+
+.btn-primary.is-loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn-primary.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2.4px solid rgba(30, 30, 30, .25);
+    border-top-color: var(--color-black);
+    transform: translate(-50%, -50%);
+    animation: btnSpin .7s linear infinite;
+}
+
+@keyframes btnSpin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .btn-app {
@@ -330,12 +432,21 @@ p { font-size: var(--fs-b1); line-height: 1.6; }
     border: 1.5px solid rgba(249, 244, 238, .15);
     border-radius: var(--r-pill);
     white-space: nowrap;
-    transition: transform var(--tr-base), box-shadow var(--tr-base);
+    transition:
+        transform var(--motion-base) var(--ease-out),
+        box-shadow var(--motion-base) var(--ease-out),
+        background-color var(--motion-base) var(--ease-out);
 }
 
 .btn-app:hover {
+    background-color: var(--color-bg-2);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-3);
+}
+
+.btn-app:active {
+    transform: translateY(1px);
+    box-shadow: var(--shadow-1);
 }
 
 

@@ -26,6 +26,7 @@
                     <ul class="nav">
                         <li><a href="#about">브랜드</a></li>
                         <li><a href="#features">서비스</a></li>
+                        <li><a href="#persona">사용자</a></li>
                         <li><a href="#driver">드라이버</a></li>
                         <li><a href="#review">리뷰</a></li>
                     </ul>
@@ -77,15 +78,63 @@
     </section>
 
     <!-- ============================================================
-         ABOUT
+         WHY DANGGO  (former: About)
     ============================================================ -->
-    <section class="about" id="about">
-        <div class="about__inner">
-            <p class="about-slogan">
-                <span>이동</span>부터 <span>케어</span>까지<br>
-                <strong>반려동물 외출의 모든 것</strong>
-            </p>
-            <img src="assets/images/danggo-logo-w.webp" alt="DangGO">
+    <section class="why" id="about">
+        <div class="container">
+            <div class="why__head">
+                <p class="section-label">Why DangGO</p>
+                <h2 class="section-title">
+                    매년 커지는 반려시장,<br>
+                    그래도 외출은 <span class="color-point">여전히 어렵잖아요</span>
+                </h2>
+                <p class="section-sub">
+                    2024년 기준 국내 반려가구는 600만, 그런데 보호자의 72%는 여전히 외출 동반에 어려움을 겪고 있어요.<br>
+                    댕고는 이 격차를 좁히기 위해 시작했습니다.
+                </p>
+            </div>
+
+            <!-- Vision Card -->
+            <div class="why__vision">
+                <div class="why__vision-bg" aria-hidden="true">
+                    <span class="why__vision-paw why__vision-paw--1"></span>
+                    <span class="why__vision-paw why__vision-paw--2"></span>
+                    <span class="why__vision-paw why__vision-paw--3"></span>
+                </div>
+                <p class="why__vision-eyebrow">VISION · 우리가 만드는 변화</p>
+                <p class="why__vision-slogan">
+                    <span>이동</span>부터 <span>케어</span>까지<br>
+                    <strong>반려동물 외출의 모든 것</strong>
+                </p>
+                <p class="why__vision-desc">
+                    택시 한 대를 잡는 것이 아니라, 우리 아이의 안전한 이동 과정 전체를 맡길 수 있는 신뢰의 기반.<br>
+                    병원·미용·여행·응급 — 어느 순간이든 댕고가 곁에 있도록.
+                </p>
+            </div>
+
+            <!-- Market Stats -->
+            <div class="why__stats">
+                <div class="why__stat">
+                    <div class="why__stat-num"><em>1,500</em>만</div>
+                    <div class="why__stat-label">국내 반려인구</div>
+                    <div class="why__stat-src">KB금융 2024</div>
+                </div>
+                <div class="why__stat">
+                    <div class="why__stat-num"><em>600</em>만</div>
+                    <div class="why__stat-label">반려가구 수</div>
+                    <div class="why__stat-src">통계청 2024</div>
+                </div>
+                <div class="why__stat">
+                    <div class="why__stat-num"><em>15</em>조원</div>
+                    <div class="why__stat-label">2027 예상 시장규모</div>
+                    <div class="why__stat-src">한국농촌경제연구원</div>
+                </div>
+                <div class="why__stat why__stat--accent">
+                    <div class="why__stat-num"><em>72</em>%</div>
+                    <div class="why__stat-label">이동 동반에 어려움</div>
+                    <div class="why__stat-src">자체 설문 N=412</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -214,6 +263,142 @@
                 <img src="assets/images/taxi.png" alt="댕고 택시">
                 <span class="usecase-stack__beam usecase-stack__beam--1"></span>
                 <span class="usecase-stack__beam usecase-stack__beam--2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PERSONA — 어떤 보호자분들이 댕고를 사랑할까요
+    ============================================================ -->
+    <section class="persona section" id="persona">
+        <div class="container">
+            <p class="section-label text-center">For You</p>
+            <h2 class="section-title text-center">
+                이런 보호자분들이<br>
+                <span class="color-point">댕고를 사랑해요</span>
+            </h2>
+            <p class="section-sub text-center">
+                매주 같은 일정의 정기 사용자, 갑작스런 이동의 긴급 사용자.<br>
+                두 가지 라이프스타일에 맞춰 댕고는 다르게 동작해요.
+            </p>
+
+            <div class="persona__grid">
+
+                <!-- Persona 1 — Routine -->
+                <article class="persona-card persona-card--routine">
+                    <div class="persona-card__head">
+                        <div class="persona-card__avatar">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="100" cy="100" r="98" fill="#FFFCD2"/>
+                                <ellipse cx="100" cy="105" rx="48" ry="55" fill="#F4D6BC"/>
+                                <path d="M 52 95 Q 50 50 100 45 Q 150 50 148 95 Q 148 75 130 70 Q 110 60 100 60 Q 90 60 70 70 Q 52 75 52 95 Z" fill="#3a2a22"/>
+                                <path d="M 52 95 Q 52 130 60 150 Q 55 110 60 100 Z" fill="#3a2a22"/>
+                                <path d="M 148 95 Q 148 130 140 150 Q 145 110 140 100 Z" fill="#3a2a22"/>
+                                <ellipse cx="84" cy="105" rx="3.5" ry="4.5" fill="#1E1E1E"/>
+                                <ellipse cx="116" cy="105" rx="3.5" ry="4.5" fill="#1E1E1E"/>
+                                <ellipse cx="74" cy="118" rx="6" ry="3" fill="#FFB5C2" opacity=".7"/>
+                                <ellipse cx="126" cy="118" rx="6" ry="3" fill="#FFB5C2" opacity=".7"/>
+                                <path d="M 92 130 Q 100 138 108 130" stroke="#1E1E1E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <circle cx="155" cy="155" r="22" fill="#fff" stroke="#1E1E1E" stroke-width="2"/>
+                                <ellipse cx="148" cy="148" rx="6" ry="9" fill="#E8B888"/>
+                                <circle cx="150" cy="155" r="1.5" fill="#1E1E1E"/>
+                                <circle cx="160" cy="155" r="1.5" fill="#1E1E1E"/>
+                                <ellipse cx="155" cy="162" rx="2" ry="1.5" fill="#1E1E1E"/>
+                            </svg>
+                        </div>
+                        <div class="persona-card__meta">
+                            <span class="persona-card__tag persona-card__tag--routine">
+                                <span class="persona-card__dot"></span>
+                                루틴 케어형
+                            </span>
+                            <h3 class="persona-card__name">정수민 · 32세</h3>
+                            <p class="persona-card__role">콘텐츠 마케터 · 마포구 · 포메라니안 코코맘</p>
+                        </div>
+                    </div>
+
+                    <blockquote class="persona-card__quote">
+                        "코코 미용은 매달 셋째 주 화요일이에요. 그 날만은 일이 늦어져도 어떻게든 데려가야 하잖아요."
+                    </blockquote>
+
+                    <div class="persona-card__stats">
+                        <div><span>월 평균</span><strong>4~6회</strong></div>
+                        <div><span>주 시간</span><strong>평일 오후</strong></div>
+                        <div><span>주 케이스</span><strong>병원·미용</strong></div>
+                    </div>
+
+                    <p class="persona-card__needs-title">정수민님이 가장 원하는 것</p>
+                    <ul class="persona-card__needs">
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>정기 일정의 안정성</strong> — 매번 새로 알아보지 않아도 되는 자동 매칭</span>
+                        </li>
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>같은 드라이버 매칭</strong> — 코코를 잘 아는 익숙한 사람</span>
+                        </li>
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>예측 가능한 비용</strong> — 월 단위로 예산 짤 수 있는 투명한 가격</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Persona 2 — Urgent -->
+                <article class="persona-card persona-card--urgent">
+                    <div class="persona-card__head">
+                        <div class="persona-card__avatar">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="100" cy="100" r="98" fill="#FFE9EE"/>
+                                <ellipse cx="100" cy="105" rx="48" ry="54" fill="#F4D6BC"/>
+                                <path d="M 52 95 Q 50 60 100 55 Q 150 60 148 95 Q 145 80 130 75 Q 115 70 100 70 Q 85 70 70 75 Q 55 80 52 95 Z" fill="#1a1410"/>
+                                <path d="M 60 90 Q 80 78 100 80" stroke="#1a1410" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                <ellipse cx="84" cy="107" rx="2.5" ry="3" fill="#1E1E1E"/>
+                                <ellipse cx="116" cy="107" rx="2.5" ry="3" fill="#1E1E1E"/>
+                                <path d="M 92 130 Q 100 134 108 130" stroke="#1E1E1E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <circle cx="84" cy="106" r="11" fill="none" stroke="#1E1E1E" stroke-width="2"/>
+                                <circle cx="116" cy="106" r="11" fill="none" stroke="#1E1E1E" stroke-width="2"/>
+                                <line x1="95" y1="106" x2="105" y2="106" stroke="#1E1E1E" stroke-width="2"/>
+                                <rect x="135" y="148" width="40" height="28" rx="3" fill="#FF99B0" stroke="#1E1E1E" stroke-width="2"/>
+                                <rect x="146" y="142" width="18" height="8" rx="2" fill="none" stroke="#1E1E1E" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="persona-card__meta">
+                            <span class="persona-card__tag persona-card__tag--urgent">
+                                <span class="persona-card__dot"></span>
+                                긴급 이용형
+                            </span>
+                            <h3 class="persona-card__name">이재훈 · 38세</h3>
+                            <p class="persona-card__role">시니어 PM · 강남구 · 시바견 콩이아빠</p>
+                        </div>
+                    </div>
+
+                    <blockquote class="persona-card__quote">
+                        "갑자기 부산 출장 잡혔어요. 콩이 펫호텔까지 새벽에 누가 데려다 주죠?"
+                    </blockquote>
+
+                    <div class="persona-card__stats">
+                        <div><span>월 평균</span><strong>2~3회</strong></div>
+                        <div><span>주 시간</span><strong>새벽·심야</strong></div>
+                        <div><span>주 케이스</span><strong>펫호텔·공항</strong></div>
+                    </div>
+
+                    <p class="persona-card__needs-title">이재훈님이 가장 원하는 것</p>
+                    <ul class="persona-card__needs">
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>즉시 매칭</strong> — 전날·당일에라도 가능한 빠른 픽업</span>
+                        </li>
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>원스톱 처리</strong> — 펫호텔·이동·결제까지 한 번에</span>
+                        </li>
+                        <li>
+                            <span class="persona-card__check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-7" stroke="#1E1E1E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span><strong>24시간 가용성</strong> — 새벽 5시에도 응답 가능한 서비스</span>
+                        </li>
+                    </ul>
+                </article>
+
             </div>
         </div>
     </section>
