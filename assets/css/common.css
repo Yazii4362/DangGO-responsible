@@ -1,39 +1,56 @@
-﻿@font-face {
+@charset "utf-8";
+
+/* ============================================================
+ * Common
+ * 디자인 토큰, 타이포, 공통 컴포넌트, 유틸리티.
+ * 섹션별 스타일은 style.css에서 담당.
+ * ============================================================ */
+
+/* ============================================================
+ * 1. Web Fonts
+ * ============================================================ */
+@font-face {
     font-family: 'TmoneyRoundWind';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
     font-weight: 400;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'TmoneyRoundWind';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
     font-weight: 800;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
     font-weight: 500;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
@@ -42,20 +59,23 @@
 }
 
 
+/* ============================================================
+ * 2. Design Tokens
+ * ============================================================ */
 :root {
+    /* Color */
+    --color-primary: #F5F278;
+    --color-point:   #FF99B0;
+    --color-black:   #1E1E1E;
+    --color-bg:      #302F32;
+    --color-text:    #F9F4EE;
+    --color-white:   #FFFFFF;
 
-    --color-primary:  #F5F278;
-    --color-point:    #FF99B0;
-    --color-black:    #1E1E1E;
-    --color-bg:       #302F32;
-    --color-text:     #F9F4EE;
-    --color-white:    #FFFFFF;
-
-
+    /* Font Family */
     --font-headline: 'TmoneyRoundWind', sans-serif;
     --font-body:     'Pretendard', sans-serif;
 
- 
+    /* Font Size */
     --fs-h1:    3rem;
     --fs-h2:    2.5rem;
     --fs-h3:    2rem;
@@ -64,47 +84,47 @@
     --fs-b2:    0.875rem;
     --fs-badge: 0.75rem;
 
-
+    /* Font Weight */
     --fw-regular:   400;
     --fw-medium:    500;
     --fw-semibold:  600;
     --fw-bold:      700;
     --fw-extrabold: 800;
 
-
-    --sp-xs:        1.25rem;
-    --sp-sm:        2.5rem;
-    --sp-md:        3.75rem;
-    --sp-section:   6.875rem;
+    /* Spacing (4px 배수) */
+    --sp-xs:        1.25rem;  /* 20px */
+    --sp-sm:        2.5rem;   /* 40px */
+    --sp-md:        3.75rem;  /* 60px */
+    --sp-section:   6.875rem; /* 110px */
     --sp-title-gap: 1.25rem;
 
-
+    /* Layout */
     --container-width: 1440px;
+    --container-pad:   40px;
     --grid-cols:       12;
     --grid-gutter:     24px;
     --grid-col-width:  98px;
 
- 
+    /* Radius */
     --r-sm:   0.625rem;
     --r-md:   1.25rem;
     --r-pill: 2.5rem;
     --r-full: 9999px;
 
+    /* Shadow */
+    --shadow-sm:           0 2px 8px rgba(0, 0, 0, .20);
+    --shadow-md:           0 6px 20px rgba(0, 0, 0, .30);
+    --shadow-lg:           0 12px 40px rgba(0, 0, 0, .38);
+    --shadow-glow-primary: 0 4px 20px rgba(245, 242, 120, .50);
+    --shadow-glow-point:   0 4px 20px rgba(255, 153, 176, .50);
 
-    --shadow-sm:           0 2px 8px rgba(0,0,0,.20);
-    --shadow-md:           0 6px 20px rgba(0,0,0,.30);
-    --shadow-lg:           0 12px 40px rgba(0,0,0,.38);
-    --shadow-glow-primary: 0 4px 20px rgba(245,242,120,.50);
-    --shadow-glow-point:   0 4px 20px rgba(255,153,176,.50);
-
-
+    /* Transition */
     --tr-fast: 150ms ease;
     --tr-base: 250ms ease;
     --tr-slow: 400ms ease;
 }
 
-
-/* 태블릿: 768px ~ 1024px */
+/* Tablet: 768px ~ 1024px */
 @media (max-width: 1024px) and (min-width: 768px) {
     :root {
         --container-width: 100%;
@@ -114,229 +134,238 @@
         --fs-h4:    1.25rem;
         --fs-b1:    0.875rem;
         --fs-b2:    0.8125rem;
-        --fs-badge: 0.75rem;
         --sp-section: 5rem;
     }
 }
 
-/* 모바일: 390px ~ 767px */
-@media (max-width: 767px) and (min-width: 390px) {
+/* Mobile: ~767px */
+@media (max-width: 767px) {
     :root {
         --container-width: 100%;
+        --container-pad:   20px;
         --fs-h1:    2.25rem;
         --fs-h2:    1.75rem;
         --fs-h3:    1.25rem;
         --fs-h4:    1rem;
         --fs-b1:    0.875rem;
         --fs-b2:    0.75rem;
-        --fs-badge: 0.75rem;
         --sp-section: 3.75rem;
         --sp-sm:      2rem;
         --sp-md:      3rem;
     }
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 
-
-body, p, h1, h2, h3 {
-    font-size: 1rem;
-}
-
+/* ============================================================
+ * 3. Base Typography
+ * ============================================================ */
 body {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #F9F4EE;
-    background-color: #302F32;
+    font-family: var(--font-body);
+    font-size: var(--fs-b1);
+    font-weight: var(--fw-regular);
+    color: var(--color-text);
+    background-color: var(--color-bg);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
     word-break: keep-all;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-headline);
+    font-weight: var(--fw-extrabold);
     line-height: 1.25;
 }
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-p  { font-size: 1rem; line-height: 1.6; }
 
-a       { color: inherit; text-decoration: none; }
-ul, ol  { list-style: none; }
-img     { max-width: 100%; display: block; }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
 
+p { font-size: var(--fs-b1); line-height: 1.6; }
 
-.container {
-    width: 100%;
-    max-width: 1440px;
-    margin-inline: auto;
-    padding-inline: 40px;
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-black);
 }
 
-@media (max-width: 767px) and (min-width: 390px) {
-    .container {
-        padding-inline: 20px;
-    }
-    .section-title { font-size: 1.75rem; }
-    .section-sub   { font-size: 0.9375rem; }
+
+/* ============================================================
+ * 4. Layout Primitives
+ * ============================================================ */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
 }
 
 .section {
-    padding-block: 110px;
+    padding-block: var(--sp-section);
 }
 
 
+/* ============================================================
+ * 5. Section Header (label / title / sub)
+ * ============================================================ */
 .section-label {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-family: var(--font-body);
+    font-size: var(--fs-badge);
+    font-weight: var(--fw-semibold);
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: #F5F278;
-    margin-bottom: 20px;
+    color: var(--color-primary);
+    margin-bottom: var(--sp-xs);
 }
 
 .section-title {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #F9F4EE;
-    margin-bottom: 20px;
+    font-family: var(--font-headline);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-extrabold);
+    color: var(--color-text);
     line-height: 1.25;
+    margin-bottom: var(--sp-xs);
 }
 
 .section-sub {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #F9F4EE;
+    font-family: var(--font-body);
+    font-size: var(--fs-b1);
+    font-weight: var(--fw-regular);
+    color: var(--color-text);
     opacity: .75;
     line-height: 1.6;
     margin-bottom: 48px;
 }
 
+@media (max-width: 767px) {
+    .section-sub { font-size: 0.9375rem; }
+}
 
-.font-headline { font-family: 'TmoneyRoundWind', sans-serif; }
-.font-body     { font-family: 'Pretendard', sans-serif; }
 
-.fs-h1  { font-size: 3rem; }
-.fs-h2  { font-size: 2.5rem; }
-.fs-h3  { font-size: 2rem; }
-.fs-h4  { font-size: 1.5rem; }
-.fs-b1  { font-size: 1rem; }
-.fs-b2  { font-size: 0.875rem; }
+/* ============================================================
+ * 6. Typography Utilities
+ * ============================================================ */
+.font-headline { font-family: var(--font-headline); }
+.font-body     { font-family: var(--font-body); }
 
-.fw-regular   { font-weight: 400; }
-.fw-medium    { font-weight: 500; }
-.fw-semibold  { font-weight: 600; }
-.fw-bold      { font-weight: 700; }
-.fw-extrabold { font-weight: 800; }
+.fs-h1 { font-size: var(--fs-h1); }
+.fs-h2 { font-size: var(--fs-h2); }
+.fs-h3 { font-size: var(--fs-h3); }
+.fs-h4 { font-size: var(--fs-h4); }
+.fs-b1 { font-size: var(--fs-b1); }
+.fs-b2 { font-size: var(--fs-b2); }
+
+.fw-regular   { font-weight: var(--fw-regular); }
+.fw-medium    { font-weight: var(--fw-medium); }
+.fw-semibold  { font-weight: var(--fw-semibold); }
+.fw-bold      { font-weight: var(--fw-bold); }
+.fw-extrabold { font-weight: var(--fw-extrabold); }
 
 .text-center { text-align: center; }
 .text-left   { text-align: left; }
 .text-right  { text-align: right; }
 
 
-.color-primary { color: #FF99B0; }
-.color-point   { color: #FF99B0; }
-.color-text    { color: #F9F4EE; }
-.color-black   { color: #1E1E1E; }
+/* ============================================================
+ * 7. Color Utilities
+ * ============================================================ */
+.color-primary { color: var(--color-primary); }
+.color-point   { color: var(--color-point); }
+.color-text    { color: var(--color-text); }
+.color-black   { color: var(--color-black); }
 
-.bg-primary { background-color: #F5F278; }
-.bg-dark    { background-color: #302F32; }
-.bg-black   { background-color: #1E1E1E; }
-.bg-white   { background-color: #FFFFFF; }
+.bg-primary { background-color: var(--color-primary); }
+.bg-dark    { background-color: var(--color-bg); }
+.bg-black   { background-color: var(--color-black); }
+.bg-white   { background-color: var(--color-white); }
 
 
+/* ============================================================
+ * 8. Buttons
+ * ============================================================ */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    border-radius: 40px;
-    border: none;
-    cursor: pointer;
-    transition:
-        transform 250ms ease,
-        box-shadow 250ms ease,
-        background-color 250ms ease;
+    font-size: var(--fs-b2);
+    font-weight: var(--fw-bold);
+    border-radius: var(--r-pill);
     white-space: nowrap;
     text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform var(--tr-base),
+        box-shadow var(--tr-base),
+        background-color var(--tr-base);
 }
 
 .btn-primary {
-    background-color: #F5F278;
-    color: #1E1E1E;
+    background-color: var(--color-primary);
+    color: var(--color-black);
     padding: 14px 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.20);
+    box-shadow: var(--shadow-sm);
 }
+
 .btn-primary:hover {
     background-color: #eeeb58;
-    box-shadow: 0 4px 20px rgba(245,242,120,.50);
+    box-shadow: var(--shadow-glow-primary);
     transform: translateY(-2px);
 }
+
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0,0,0,.20);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-app {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    background-color: #1E1E1E;
-    color: #F9F4EE;
     padding: 12px 24px;
-    border-radius: 40px;
-    border: 1.5px solid rgba(249,244,238,.15);
-    transition: transform 250ms ease, box-shadow 250ms ease;
+    font-size: var(--fs-b2);
+    font-weight: var(--fw-bold);
+    background-color: var(--color-black);
+    color: var(--color-text);
+    border: 1.5px solid rgba(249, 244, 238, .15);
+    border-radius: var(--r-pill);
     white-space: nowrap;
+    transition: transform var(--tr-base), box-shadow var(--tr-base);
 }
+
 .btn-app:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,.30);
+    box-shadow: var(--shadow-md);
 }
 
 
+/* ============================================================
+ * 9. Hero Badge — "국내 1위" KV 강조 배지
+ * ============================================================ */
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 8px 18px;
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #1E1E1E;
-    background-color: #F5F278;
-    border-radius: 9999px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.20);
+    font-size: var(--fs-b2);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+    background-color: var(--color-primary);
+    border-radius: var(--r-full);
+    box-shadow: var(--shadow-sm);
 }
 
-/* 국내 1위 뱃지 강화 */
 .hero-badge--no1 {
     position: relative;
     overflow: hidden;
     padding: 9px 20px 9px 16px;
+    gap: 7px;
     background: linear-gradient(135deg, #FFE566 0%, #F5F278 45%, #FFD700 100%);
     border: 1.5px solid rgba(255, 215, 0, 0.6);
     box-shadow:
-        0 2px 0 rgba(255,255,255,0.55) inset,
+        0 2px 0 rgba(255, 255, 255, 0.55) inset,
         0 4px 16px rgba(245, 200, 0, 0.45),
-        0 1px 4px rgba(0,0,0,0.18);
-    gap: 7px;
+        0 1px 4px rgba(0, 0, 0, 0.18);
     animation: badgePulse 3.5s ease-in-out infinite;
     cursor: default;
 }
@@ -344,18 +373,21 @@ img     { max-width: 100%; display: block; }
 .hero-badge__trophy {
     font-size: 1rem;
     line-height: 1;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
+
 .hero-badge__text {
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: var(--fw-semibold);
     color: #5A4200;
     letter-spacing: -0.01em;
 }
+
 .hero-badge__text strong {
-    font-weight: 800;
+    font-weight: var(--fw-extrabold);
     color: #3A2800;
 }
+
 .hero-badge__shimmer {
     position: absolute;
     top: 0;
@@ -365,84 +397,107 @@ img     { max-width: 100%; display: block; }
     background: linear-gradient(
         120deg,
         transparent 0%,
-        rgba(255,255,255,0.55) 50%,
+        rgba(255, 255, 255, 0.55) 50%,
         transparent 100%
     );
+    animation: badgeShimmer 3.5s ease-in-out infinite;
+}
 
 @keyframes badgeShimmer {
     0%   { left: -75%; }
     40%  { left: 125%; }
     100% { left: 125%; }
 }
+
 @keyframes badgePulse {
-    0%, 100% { box-shadow: 0 2px 0 rgba(255,255,255,0.55) inset, 0 4px 16px rgba(245,200,0,0.45), 0 1px 4px rgba(0,0,0,0.18); }
-    50%       { box-shadow: 0 2px 0 rgba(255,255,255,0.55) inset, 0 6px 24px rgba(245,200,0,0.65), 0 1px 4px rgba(0,0,0,0.18); }
+    0%, 100% {
+        box-shadow:
+            0 2px 0 rgba(255, 255, 255, 0.55) inset,
+            0 4px 16px rgba(245, 200, 0, 0.45),
+            0 1px 4px rgba(0, 0, 0, 0.18);
+    }
+    50% {
+        box-shadow:
+            0 2px 0 rgba(255, 255, 255, 0.55) inset,
+            0 6px 24px rgba(245, 200, 0, 0.65),
+            0 1px 4px rgba(0, 0, 0, 0.18);
+    }
 }
 
+
+/* ============================================================
+ * 10. Pill Badge — 다목적 알약형 배지 (color/size variant)
+ * ============================================================ */
 .pill-badge {
-    --badge-stroke: #F5F278;
+    --badge-stroke: var(--color-primary);
     --badge-inner-stroke: #FFF6B8;
-    --badge-text: #1E1E1E;
+    --badge-text: var(--color-black);
 
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 12px 22px;
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: var(--fs-b2);
+    font-weight: var(--fw-bold);
     color: var(--badge-text);
     background: #ECECEC;
     border: 3px solid var(--badge-stroke);
-    border-radius: 9999px;
+    border-radius: var(--r-full);
     white-space: nowrap;
-    box-shadow: 0 8px 22px rgba(0,0,0,.35);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .35);
     cursor: default;
-    transition:
-        transform 250ms ease,
-        box-shadow 250ms ease;
+    transition: transform var(--tr-base), box-shadow var(--tr-base);
 }
+
 .pill-badge::after {
     content: '';
     position: absolute;
     inset: 4px;
     border: 1.5px solid var(--badge-inner-stroke);
-    border-radius: 9999px;
+    border-radius: var(--r-full);
     pointer-events: none;
 }
+
 .pill-badge:hover {
     transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 12px 40px rgba(0,0,0,.38);
+    box-shadow: var(--shadow-lg);
 }
 
-.pill-badge--sm { padding: 9px 16px;  font-size: 0.75rem; }
-.pill-badge--lg { padding: 14px 26px; font-size: 1rem; }
+/* Size */
+.pill-badge--sm { padding: 9px 16px;  font-size: var(--fs-badge); }
+.pill-badge--lg { padding: 14px 26px; font-size: var(--fs-b1); }
 
-.pill-badge--yellow { --badge-stroke: #F5F278; --badge-inner-stroke: #FFF6B8; --badge-text: #D2A600; }
-.pill-badge--pink   { --badge-stroke: #FF4F86; --badge-inner-stroke: #FF9CB9; --badge-text: #FF4F86; }
-.pill-badge--white  { --badge-stroke: rgba(249,244,238,.8); --badge-inner-stroke: rgba(255,255,255,.95); --badge-text: #1E1E1E; }
-.pill-badge--dark   { --badge-stroke: rgba(30,30,30,.5); --badge-inner-stroke: rgba(100,100,100,.5); --badge-text: #1E1E1E; }
-.pill-badge--purple { --badge-stroke: #6D41D9; --badge-inner-stroke: #A98DF0; --badge-text: #6D41D9; }
-.pill-badge--orange { --badge-stroke: #F2912E; --badge-inner-stroke: #F7BE84; --badge-text: #F2912E; }
-.pill-badge--green  { --badge-stroke: #3FAF5A; --badge-inner-stroke: #84D396; --badge-text: #3FAF5A; }
+/* Color */
+.pill-badge--yellow { --badge-stroke: #F5F278; --badge-inner-stroke: #FFF6B8;             --badge-text: #D2A600; }
+.pill-badge--pink   { --badge-stroke: #FF4F86; --badge-inner-stroke: #FF9CB9;             --badge-text: #FF4F86; }
+.pill-badge--white  { --badge-stroke: rgba(249, 244, 238, .8); --badge-inner-stroke: rgba(255, 255, 255, .95); --badge-text: var(--color-black); }
+.pill-badge--dark   { --badge-stroke: rgba(30, 30, 30, .5);    --badge-inner-stroke: rgba(100, 100, 100, .5);  --badge-text: var(--color-black); }
+.pill-badge--purple { --badge-stroke: #6D41D9; --badge-inner-stroke: #A98DF0;             --badge-text: #6D41D9; }
+.pill-badge--orange { --badge-stroke: #F2912E; --badge-inner-stroke: #F7BE84;             --badge-text: #F2912E; }
+.pill-badge--green  { --badge-stroke: #3FAF5A; --badge-inner-stroke: #84D396;             --badge-text: #3FAF5A; }
 
 .pill-badge--light {
+    --badge-text: var(--color-black);
     background: #F6F6F6;
-    --badge-text: #1E1E1E;
-}
-.pill-badge--light:hover {
-    box-shadow: 0 4px 20px rgba(245,242,120,.50);
 }
 
-/* ??? 11. KV FLOATING ANIMATION ???????????????? */
-@keyframes floatY {
-    0%, 100% { transform: translateY(0px) rotate(-4deg); }
-    50%       { transform: translateY(-10px) rotate(-4deg); }
+.pill-badge--light:hover {
+    box-shadow: var(--shadow-glow-primary);
 }
+
+
+/* ============================================================
+ * 11. KV Floating Badge Animation
+ * ============================================================ */
+@keyframes floatY {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50%      { transform: translateY(-10px) rotate(-4deg); }
+}
+
 @keyframes floatY-rev {
-    0%, 100% { transform: translateY(0px) rotate(4deg); }
-    50%       { transform: translateY(-10px) rotate(4deg); }
+    0%, 100% { transform: translateY(0) rotate(4deg); }
+    50%      { transform: translateY(-10px) rotate(4deg); }
 }
 
 .floating-badge {
@@ -450,7 +505,10 @@ img     { max-width: 100%; display: block; }
     animation: floatY 3s ease-in-out infinite;
 }
 
-/* ??? 12. ABOUT SECTION ???????????????????????? */
+
+/* ============================================================
+ * 12. About — 도로 장식 라인
+ * ============================================================ */
 .road-dash {
     width: min(100%, 1320px);
     height: 4px;
@@ -458,8 +516,8 @@ img     { max-width: 100%; display: block; }
     margin-bottom: 24px;
     background-image: repeating-linear-gradient(
         to right,
-        #F5F278 0,
-        #F5F278 24px,
+        var(--color-primary) 0,
+        var(--color-primary) 24px,
         transparent 24px,
         transparent 48px
     );
@@ -470,23 +528,23 @@ img     { max-width: 100%; display: block; }
     width: 100%;
     height: 6px;
     margin-bottom: 0;
+    opacity: 1;
     background-image: repeating-linear-gradient(
         to right,
-        rgba(255,255,255,0.6) 0,
-        rgba(255,255,255,0.6) 48px,
+        rgba(255, 255, 255, 0.6) 0,
+        rgba(255, 255, 255, 0.6) 48px,
         transparent 48px,
         transparent 96px
     );
-    opacity: 1;
 }
 
-@media (max-width: 767px) and (min-width: 390px) {
+@media (max-width: 767px) {
     .about .road-dash {
         height: 4px;
         background-image: repeating-linear-gradient(
             to right,
-            rgba(255,255,255,0.6) 0,
-            rgba(255,255,255,0.6) 28px,
+            rgba(255, 255, 255, 0.6) 0,
+            rgba(255, 255, 255, 0.6) 28px,
             transparent 28px,
             transparent 56px
         );
@@ -494,216 +552,121 @@ img     { max-width: 100%; display: block; }
 }
 
 .about-slogan {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #F9F4EE;
+    font-family: var(--font-headline);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-extrabold);
+    color: var(--color-text);
     line-height: 1.35;
 }
+
 .about-slogan span {
-    color: #FF99B0;
+    color: var(--color-point);
 }
 
 .about-brand {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 3rem;
-    font-weight: 800;
-    color: #F9F4EE;
+    font-family: var(--font-headline);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-extrabold);
+    color: var(--color-text);
     line-height: 1;
     letter-spacing: -.01em;
 }
 
-/* ??? 13. CARD SYSTEM ?????????????????????????? */
+
+/* ============================================================
+ * 13. Card
+ * ============================================================ */
 .card {
-    background-color: #F5F278;
-    color: #1E1E1E;
-    border-radius: 20px;
-    padding: 20px;
-    transition: transform 250ms ease, box-shadow 250ms ease;
-}
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0,0,0,.30);
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    border-radius: var(--r-md);
+    padding: var(--sp-xs);
+    transition: transform var(--tr-base), box-shadow var(--tr-base);
 }
 
-/* ??? 14. GRID UTILITIES ??????????????????????? */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+ * 14. Grid Utilities
+ * ============================================================ */
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
+    gap: var(--grid-gutter);
 }
 
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: var(--sp-xs);
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: var(--sp-xs);
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .grid-12 { grid-template-columns: repeat(6, 1fr); }
+    .grid-4  { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 767px) and (min-width: 390px) {
+
+@media (max-width: 767px) {
+    .grid-12 { grid-template-columns: 1fr; gap: var(--sp-xs); }
     .grid-4  { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .grid-2  { grid-template-columns: 1fr; }
-    .grid-12 { grid-template-columns: 1fr; gap: 20px; }
 }
 
-/* ??? 15. FLEX UTILITIES ??????????????????????? */
-.flex         { display: flex; }
-.flex-center  { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-col     { display: flex; flex-direction: column; }
-.flex-col-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.gap-xs { gap: 20px; }
-.gap-sm { gap: 40px; }
-.gap-md { gap: 60px; }
+/* ============================================================
+ * 15. Flex / Spacing Utilities
+ * ============================================================ */
+.flex            { display: flex; }
+.flex-center     { display: flex; align-items: center; justify-content: center; }
+.flex-between    { display: flex; align-items: center; justify-content: space-between; }
+.flex-col        { display: flex; flex-direction: column; }
+.flex-col-center { display: flex; flex-direction: column; align-items: center; }
 
-/* ??? 16. SPACING UTILITIES ???????????????????? */
-.mt-xs { margin-top: 20px; }
-.mt-sm { margin-top: 40px; }
-.mt-md { margin-top: 60px; }
-.mb-xs { margin-bottom: 20px; }
-.mb-sm { margin-bottom: 40px; }
-.mb-md { margin-bottom: 60px; }
-.py-section { padding-block: 110px; }
+.gap-xs { gap: var(--sp-xs); }
+.gap-sm { gap: var(--sp-sm); }
+.gap-md { gap: var(--sp-md); }
 
-/* ??? 17. REVIEW COMPONENTS ???????????????????? */
+.mt-xs { margin-top: var(--sp-xs); }
+.mt-sm { margin-top: var(--sp-sm); }
+.mt-md { margin-top: var(--sp-md); }
+.mb-xs { margin-bottom: var(--sp-xs); }
+.mb-sm { margin-bottom: var(--sp-sm); }
+.mb-md { margin-bottom: var(--sp-md); }
 
-/* 리뷰 통계 */
-.review-stats {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
-}
+.py-section { padding-block: var(--sp-section); }
 
-.review-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
 
-.review-stat__value {
-    font-family: 'TmoneyRoundWind', sans-serif;
-    font-size: 2.75rem;
-    font-weight: 800;
-    color: #F5F278;
-    line-height: 1;
-    order: -1;
-}
-.review-stat__value--point { color: #FF99B0; }
-
-.review-stat__label {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #F9F4EE;
-    opacity: .65;
-}
-
-@media (max-width: 767px) and (min-width: 390px) {
-    .review-stats {
-        gap: 24px 0;
-        justify-content: center;
-    }
-    .review-stat {
-        flex: 0 0 50%;
-        align-items: center;
-    }
-    .review-stat__value { font-size: 2rem; }
-    .review-stat__label { font-size: 0.75rem; }
-}
-
-/* 리뷰 카드 */
-.review-card {
-    background-color: #1E1E1E;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 250ms ease, box-shadow 250ms ease;
-}
-.review-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0,0,0,.30);
-}
-
-.review-card__img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-}
-
-/* 리뷰 카드 바디 */
-.review-card__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 6px;
-    padding: 20px;
-}
-
-.review-card__stars {
-    font-size: 1rem;
-    color: #F5F278;
-    letter-spacing: 2px;
-}
-
-.review-card__name {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #F9F4EE;
-}
-
-.review-card__count {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #F9F4EE;
-    opacity: .55;
-}
-
-.review-card__text {
-    font-family: 'Pretendard', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #F9F4EE;
-    opacity: .8;
-    line-height: 1.55;
-    margin-top: 4px;
-}
-
-/* ??? 18. VISIBILITY HELPERS ??????????????????? */
-@media (max-width: 767px) and (min-width: 390px) {
-    .hide-mobile { display: none ; }
+/* ============================================================
+ * 16. Visibility Helpers
+ * ============================================================ */
+@media (max-width: 767px) {
+    .hide-mobile { display: none; }
     .show-mobile { display: block; }
-    .nav         { display: none ; }
+    .nav         { display: none; }
 }
+
 @media (min-width: 768px) {
     .show-mobile { display: none; }
 }
+
 @media (max-width: 1024px) and (min-width: 768px) {
     .hide-tablet { display: none; }
 }
 
-/* ??? 19. MISC ????????????????????????????????? */
-html { scroll-behavior: smooth; }
 
-
+/* ============================================================
+ * 17. Misc
+ * ============================================================ */
+html {
+    scroll-behavior: smooth;
+}
