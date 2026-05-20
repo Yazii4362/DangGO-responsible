@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=807af99f4e904857fec10786f9f3fc78"></script>
 </head>
 
 <body>
@@ -50,7 +51,10 @@
                 <h1 class="kv__title">
                     <img class="danggo-taxi" src="assets/images/danggo-logo.webp" alt="DangGO">
                 </h1>
-                <p class="kv__sub">이동부터 케어까지 반려동물 외출의 모든 것</p>
+                <p class="kv__sub">
+                    <span class="kv__sub-highlight"><em class="kv__accent">이동</em>부터 <em class="kv__accent">케어</em>까지</span><br>
+                    반려동물 외출의 모든 것
+                </p>
                 <div class="kv__btns">
                     <a href="#" class="btn-store btn-store--google">
                         <img src="assets/images/icon/googleplay.png" alt="">
@@ -139,12 +143,12 @@
     </section>
 
     <!-- ============================================================
-         HOW IT WORKS
+         HOW TO USE
     ============================================================ -->
     <section class="howto section" id="howto">
         <div class="container">
             <div class="howto__header">
-                <p class="section-label">How it works</p>
+                <p class="section-label">How to Use</p>
                 <h2 class="section-title">댕고,<br>어렵지 않아요!</h2>
                 <p class="section-sub">앱 하나로 끝나는 반려동물 외출 준비</p>
             </div>
@@ -198,11 +202,27 @@
     </section>
 
     <!-- ============================================================
-         FEATURES (Use Cases)
+         서비스 지역 (Coverage)
+    ============================================================ -->
+    <section class="map-section section" id="map">
+        <div class="container">
+            <p class="section-label text-center">서비스 지역</p>
+            <h2 class="section-title text-center">
+                댕고가 꼼꼼히 엄선한<br>펫플레이스
+            </h2>
+            <p class="section-sub text-center">
+                댕고는 펫플레이스 접근성을 넓혀가고 있어요.
+            </p>
+            <div id="kakao-map" style="width:100%; height:480px; border-radius:20px; margin-top:40px; overflow:hidden;"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         활용 사례 (Use Cases)
     ============================================================ -->
     <section class="features section" id="features">
         <div class="container">
-            <p class="section-label text-center">Use cases</p>
+            <p class="section-label text-center">활용 사례</p>
             <h2 class="section-title text-center">댕고 택시,<br>이렇게 활용해보세요</h2>
             <p class="section-sub text-center">
                 반려동물과 함께하고 싶지만<br>
@@ -404,11 +424,11 @@
     </section>
 
     <!-- ============================================================
-         DRIVER
+         전문 드라이버 (Driver)
     ============================================================ -->
     <section class="driver section" id="driver">
         <div class="container">
-            <p class="section-label text-center">Driver</p>
+            <p class="section-label text-center">전문 드라이버</p>
             <h2 class="section-title text-center">
                 전문교육을 이수한<br>
                 <span class="color-primary">댕고드라이버</span>를 만나보세요
@@ -554,10 +574,12 @@
 
     <!-- ============================================================
          REVIEW
+    <!-- ============================================================
+         고객 후기 (Review)
     ============================================================ -->
     <section class="review section" id="review">
         <div class="container">
-            <p class="section-label text-center">Review</p>
+            <p class="section-label text-center">고객 후기</p>
             <h2 class="section-title text-center">
                 댕고는 수많은 분들의<br>
                 <span class="color-point">신뢰를 받고 있어요</span>
@@ -688,7 +710,7 @@
     </section>
 
     <!-- ============================================================
-         CTA
+         지금 시작하기 (CTA)
     ============================================================ -->
     <section class="cta">
         <div class="container">
@@ -745,7 +767,7 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
